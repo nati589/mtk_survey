@@ -1,0 +1,492 @@
+body {
+  font-family: var(--font-main);
+}
+/* Header */
+header {
+  width: 100%;
+}
+#header-container {
+  background-color: var(--white-color);
+  color: var(--primary-color);
+  height: 3vh;
+  width: 70vw;
+  padding: 10% 15%;
+  z-index: 1;
+  position: fixed;
+}
+#header-left {
+  flex-basis: 50%;
+  flex-shrink: 1;
+  font-size: 2rem;
+}
+#header-left #header-title a:hover {
+  color: var(--orange-color);
+  transition: 0.3s;
+}
+#header-left a:any-link {
+  color: var(--primary-color);
+  text-decoration: none;
+}
+#header-right {
+  flex-basis: 50%;
+  flex-grow: 1;
+  text-align: right;
+}
+#nav {
+  display: none;
+}
+#menu button {
+  width: 25%;
+  height: 3vh;
+  border: none;
+  background: rgba(0, 0, 0, 0);
+}
+
+/* Hero Section */
+
+#herosection {
+  background-image: linear-gradient(
+      180.43deg,
+      rgba(0, 0, 0, 0.6) 0%,
+      rgba(0, 0, 0, 0.8) 100%
+    ),
+    url("../images/usingpc.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  overflow: hidden;
+  height: auto;
+  margin-top: 15%;
+  padding-bottom: 10%;
+}
+#herosection div h1 {
+  padding: 35% 15% 20% 15%;
+  font-size: clamp(3rem, 3rem, 3rem);
+  font-weight: 200;
+}
+#herosection div h2 {
+  color: var(--lighter-text-color);
+  font-size: 28px;
+}
+#herosection p {
+  display: none;
+}
+#herosection button {
+  border: none;
+  color: var(--orange-color);
+  background-color: transparent;
+  font-size: 40px;
+  font-family: var(--font-main);
+}
+/* Testimonial section */
+#testimonial {
+  height: auto;
+  color: var(--accent-color);
+  background-color: var(--lighter-bg-color);
+  padding: 10%;
+}
+#testimonial h2 {
+  font-size: 32px;
+  padding: 5%;
+}
+#testimonial h3 {
+  font-size: 26px;
+  color: var(--orange-color);
+}
+.testimonybox {
+  background-color: var(--lighter-bgshade-color);
+  margin-top: 15%;
+  padding: 5% 7%;
+}
+.testimonybox q {
+  font-size: 175%;
+  font-family: var(--font-quote);
+  color: var(--light-accent-color);
+  padding: 5% 0%;
+}
+.testimonybox h3 {
+  padding: 5%;
+}
+.testimonybox img {
+  width: 15%;
+  height: 15%;
+  padding: 5%;
+}
+/* Benefits */
+#benefits {
+  background-color: var(--lighter-primary-color);
+  color: white;
+  height: auto;
+  padding: 10%;
+}
+#benefits * {
+  padding: 5%;
+}
+#benefits h2 {
+  color: white;
+  font-weight: 300;
+  font-size: 32px;
+}
+#benefits h3 {
+  color: var(--orange-color);
+  font-weight: 200;
+  font-size: 28px;
+  padding-bottom: 7%;
+}
+#benefits h4 {
+  font-size: 26;
+}
+#benefits .benefit p {
+  font-size: 175%;
+  font-family: var(--font-secondary);
+  padding: 5% 0%;
+}
+#benefits .benefit img {
+  padding: 0%;
+  border-radius: 25px;
+}
+/* Call to Action */
+#accounts {
+  background-color: var(--lighter-bgshade-color);
+  padding: 20% 10%;
+}
+#accounts h2 {
+  font-size: 32px;
+  padding: 10% 0%;
+}
+.button {
+  font-size: 2rem;
+  font-family: var(--font-secondary);
+  padding: 10%;
+  margin: 5% 0%;
+  border-radius: 25px;
+  background-color: var(--lighter-orange-color);
+}
+.button:active {
+  background-color: white;
+  color: var(--lighter-orange-color);
+  transition: 0.3s;
+}
+#accounts a {
+  padding: 10%;
+  font-weight: 300;
+  margin: 0% 5%;
+}
+#accounts a:any-link {
+  color: white;
+  text-decoration: none;
+}
+/* Footer */
+footer {
+  background-color: var(--primary-color);
+  text-decoration: none;
+  color: white;
+}
+footer a:any-link {
+  color: white;
+  text-decoration: none;
+}
+footer img {
+  width: 20px;
+  height: 20px;
+}
+footer li {
+  list-style: none;
+}
+.foot-top {
+  padding: 6%;
+}
+.foot {
+  padding: 4%;
+}
+.foot a {
+  padding: 2%;
+}
+.foot button:hover {
+  color: var(--orange-color);
+  transition: 0.3s;
+}
+.foot a:hover {
+  color: var(--orange-color);
+  transition: 0.3s;
+}
+.foot .logo {
+  font-size: 30px;
+}
+.foot input {
+  color: rgba(255, 255, 255, 0.5);
+  background-color: var(--lighter-primary-color);
+  border: none;
+  font-size: 16px;
+}
+.foot button {
+  color: white;
+  border: none;
+  background-color: transparent;
+  font-size: 16px;
+}
+#foot-bottom #foot-right a:hover {
+  color: var(--orange-color);
+  transition: 0.3s;
+}
+/* Desktop and pc */
+@media only screen and (min-width: 620px) {
+  header {
+    width: 100%;
+    /* margin-bottom: 10px; */
+  }
+  #header-right {
+    text-align: right;
+  }
+  #header-container {
+    height: 5vh;
+    width: 100%;
+    max-width: 100vw;
+    padding: 4vh 0vh;
+    /* z-index: 1; */
+    position: fixed;
+    /* display: grid;
+    place-items: center; */
+  }
+  #header-left {
+    flex-basis: 20%;
+    flex-shrink: 1;
+    font-size: 2rem;
+  }
+  #header-right {
+    flex-basis: 80%;
+    flex-grow: 1;
+    text-align: right;
+  }
+  #header-right {
+    padding-left: 40%;
+  }
+  #header-container .headerpadding a:hover {
+    color: var(--orange-color);
+    transition: 0.3s;
+  }
+  .headerpadding {
+    padding: 0% 0% 0% 5%;
+  }
+  #menu {
+    display: none;
+  }
+  #nav {
+    display: block;
+    font-size: large;
+  }
+  #nav a {
+    text-decoration: none;
+  }
+  #nav ul #searchbox {
+    /* display: none; */
+    /* flex-basis: 0%; */
+    justify-content: flex-end;
+  }
+  #nav li {
+    list-style: none;
+    flex-basis: 20%;
+    text-align: right;
+  }
+  #nav li a {
+    padding: 2%;
+  }
+  #nav ul li #searchbox {
+    border: none;
+    color: var(--primary-color);
+    border-bottom: 2px solid var(--primary-color);
+  }
+  #nav ul li #searchbox:hover {
+    border-bottom: 2px solid var(--orange-color);
+    transition: 0.3s;
+  }
+  #nav li:first-of-type + li {
+    /* list-style: none; */
+    flex-basis: 5%;
+    /* text-align: right; */
+  }
+  #nav a:any-link {
+    color: var(--primary-color);
+  }
+  #herosection {
+    background: rgb(249, 247, 246);
+    background: linear-gradient(
+        180.43deg,
+        rgba(0, 0, 0, 0.6) 0%,
+        rgba(0, 0, 0, 0.8) 100%
+      ),
+      url("../images/bg-option2.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    overflow: hidden;
+    margin: 0%;
+    height: 100vh;
+    text-align: center;
+    /* position: fixed; */
+    /* padding: 0%; */
+    /* padding-bottom: 0%; */
+  }
+  #herosection div h1 {
+    padding: 25% 15% 0% 15%;
+    font-size: 3rem;
+    font-weight: 200;
+  }
+  #herosection div h2 {
+    color: var(--lighter-text-color);
+    font-size: 2rem;
+  }
+  #herosection button {
+    border: none;
+    color: var(--orange-color);
+    background-color: transparent;
+    font-size: 40px;
+    font-family: var(--font-main);
+  }
+  #testimony-container {
+    display: flex;
+    height: 80vh;
+  }
+  .testimonybox {
+    flex-basis: 25%;
+    padding: 2%;
+    margin: 2%;
+    overflow: hidden;
+    height: 55vh;
+    border-radius: 15px;
+    border-top: 5px solid var(--orange-color);
+    box-shadow: rgb(38, 57, 77) 0px 20px 30px -10px;
+    transition: 0.1s;
+
+    /* font-size: 120%; */
+  }
+  #testimony-container .testimonybox q {
+    font-size: 130%;
+  }
+  .testimonybox:hover {
+    overflow: visible;
+    height: 80%;
+    transition: 0.1s;
+    background-color: rgba(0, 173, 186, 0.35);
+    border-bottom: 5px solid var(--lighter-orange-color);
+  }
+  #testimony-container .testimonybox:hover {
+  }
+  #testimony-container .testimonybox:hover q {
+    font-size: 150%;
+  }
+  .testimonybox:hover q {
+    color: var(--white-color);
+    font-size: 150%;
+  }
+  .testimonybox img {
+    height: 13%;
+    width: auto;
+  }
+  .testimonybox:hover img {
+    height: 13%;
+    width: auto;
+  }
+  #benefits {
+    padding: 5%;
+    background-size: cover;
+    background-repeat: no-repeat;
+    overflow: hidden;
+  }
+  #benefits .benefit img {
+    border-radius: 10px;
+  }
+  .benefit {
+    display: flex;
+    text-align: center;
+    position: relative;
+    padding: 5%;
+    margin: 5% 0% 25% 0%;
+  }
+  .benefit:nth-child(2n) {
+    /* flex-direction: row-reverse; */
+  }
+  .benefit img {
+    flex-basis: 50%;
+    padding: 5%;
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    width: 60%;
+    height: 330%;
+  }
+  #benefits .benefit p {
+    flex-basis: 50%;
+    /* padding: 0% 5% 5% 5%; */
+    position: absolute;
+    right: 0;
+    /* left: 0; */
+    bottom: 0;
+    font-size: 1.75rem;
+    top: 0;
+    width: 30%;
+    height: 100%;
+    /* box-shadow: rgba(0, 0, 0, 0.06) 0px 2px 4px 0px inset; */
+    /* overflow: hidden; */
+  }
+  .benefit p:hover {
+    /* overflow-y: auto; */
+  }
+  #accounts {
+    /* position: relative; */
+    text-align: center;
+    background-image: url("../images/calltoaction.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    overflow: hidden;
+  }
+  #accounts h2 {
+    padding: 5% 0%;
+    font-size: 3rem;
+  }
+  #account {
+    display: flex;
+    text-align: center;
+    width: 100%;
+    font-size: 3rem;
+    /* padding-left: 10%; */
+
+    /* flex-basis: 100%; */
+  }
+  .button {
+    /* display: flex; */
+    flex-basis: 50%;
+    border-radius: 15px;
+    /* margin: 0% auto; */
+    width: 100%;
+    text-align: center;
+    font-size: 2rem;
+    /* position: absolute; */
+  }
+  .button:hover {
+    color: var(--lighter-bgshade-color);
+  }
+  .foot-top {
+    padding: 2%;
+  }
+  .foot {
+    padding: 2%;
+  }
+  .foot a {
+    padding: 2%;
+  }
+}
+/* @media only screen and (min-width: 620px) {
+  #header-right {
+    padding-left: 10%;
+  }
+  #header-left {
+    flex-basis: 10%;
+    flex-shrink: 1;
+    font-size: 2rem;
+  }
+  #header-right {
+    flex-basis: 90%;
+    flex-grow: 1;
+    text-align: right;
+  }
+} */
