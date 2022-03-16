@@ -1,0 +1,86 @@
+* {
+  box-sizing: border-box;
+}
+body {
+  /* margin: 0% auto; */
+  /* background-attachment: fixed; */
+  background: url("../images/bg-option2.jpg");
+  /* backdrop-filter: blur(5px); */
+  background-repeat: no-repeat;
+  background-size: cover;
+  overflow: hidden;
+  font-family: var(--font-main);
+  /* margin: 0%; */
+  /* box-shadow: 0 0 200px rgba(255, 255, 255, 0.5); */
+  /* box-shadow: rgba(255, 255, 255, 0.5); */
+  /* filter: blur(10px); */
+}
+#container {
+  display: flex;
+  margin: 3% 20%;
+  overflow: hidden;
+  /* height: 90%; */
+  /* backdrop-filter: blur(5px); */
+  /* box-shadow: 0 0 200px rgba(255, 255, 255, 0.5); */
+}
+#container div {
+  flex-basis: 50%;
+  border-radius: 0px 10px 10px 0px;
+  filter: none;
+}
+#left-card {
+}
+#left-card img {
+  /* width: 100%; */
+  border-radius: 10px 0px 0px 10px;
+  height: 100.1%;
+  overflow: hidden;
+}
+#right-card {
+  backdrop-filter: blur(45px);
+  padding: 4%;
+  /* height: 90%; */
+  color: white;
+  text-align: center;
+  /* overflow: hidden; */
+  /* height: 200%; */
+}
+#right-card a {
+  color: var(--orange-color);
+  text-decoration: none;
+}
+#right-card button {
+}
+#right-card div {
+  padding: 2%;
+}
+#right-card h1 {
+  font-size: 2rem;
+  padding: 1.5%;
+}
+#right-card div:first-child {
+  color: var(--lighter-primary-color);
+}
+input {
+  border: none;
+  width: 15rem;
+  height: 2rem;
+  border-bottom: 2px solid var(--lighter-primary-color);
+  background-color: rgba(255, 255, 255, 0.246);
+  border-radius: 2px;
+  outline: none;
+  text-align: left;
+}
+#showpassword {
+  width: auto;
+  height: auto;
+}
+input.btn {
+  background-color: var(--lighter-primary-color);
+  color: white;
+  text-align: center;
+  border-radius: 2rem;
+}
+#logo {
+  font-size: x-large;
+}

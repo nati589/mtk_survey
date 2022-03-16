@@ -178,3 +178,17 @@ h2 {
 .btn {
   color: var(--orange-color);
 }
+::-webkit-scrollbar {
+  width: 1em;
+  /* scrollbar-width: thin; */
+}
+::-webkit-scrollbar-track {
+  background: white;
+  border-radius: 100vw;
+  margin-block: 0.5em;
+}
+::-webkit-scrollbar-thumb {
+  background: var(--lighter-primary-color);
+  border: 0.25em solid white;
+  border-radius: 100vw;
+}

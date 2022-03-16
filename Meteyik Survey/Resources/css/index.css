@@ -351,7 +351,7 @@ footer li {
     margin: 2%;
     overflow: hidden;
     height: 55vh;
-    border-radius: 15px;
+    border-radius: 15 px;
     border-top: 5px solid var(--orange-color);
     box-shadow: rgb(38, 57, 77) 0px 20px 30px -10px;
     transition: 0.1s;
