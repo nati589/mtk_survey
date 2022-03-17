@@ -188,7 +188,7 @@ h2 {
   margin-block: 0.5em;
 }
 ::-webkit-scrollbar-thumb {
-  background: var(--lighter-primary-color);
+  background: rgba(230, 110, 46, 0.534);
   border: 0.25em solid white;
   border-radius: 100vw;
 }

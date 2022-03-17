@@ -1,0 +1,13 @@
+body {
+  overflow: scroll;
+  overflow-x: hidden;
+  height: 100vh;
+}
+body section {
+  margin: 8% 0%;
+  overflow: hidden;
+  justify-content: center;
+}
+body section label {
+  color: rgba(0, 169, 193, 0.3);
+}

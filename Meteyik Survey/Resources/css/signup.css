@@ -15,6 +15,11 @@ body {
   /* box-shadow: rgba(255, 255, 255, 0.5); */
   /* filter: blur(10px); */
 }
+body section {
+  height: 100vh;
+  overflow: scroll;
+  overflow-x: hidden;
+}
 #container {
   display: flex;
   margin: 3% 20%;
@@ -83,4 +88,25 @@ input.btn {
 }
 #logo {
   font-size: x-large;
+}
+@media (max-width: 1100px) {
+  section {
+    height: 100vh;
+    overflow: scroll;
+    overflow-x: hidden;
+  }
+  #left-card {
+    display: none;
+  }
+  #container div {
+    flex-basis: 100%;
+  }
+  #container {
+    margin: 15% 5% 2% 5%;
+
+    justify-content: center;
+
+    /* height: 90%; */
+    /* text-align: center; */
+  }
 }
