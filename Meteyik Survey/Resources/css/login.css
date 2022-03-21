@@ -8,6 +8,17 @@ body section {
   overflow: hidden;
   justify-content: center;
 }
-body section label {
-  color: rgba(0, 169, 193, 0.3);
+::placeholder {
+  color: rgba(255, 255, 255, 0.637);
+  opacity: 1; /* Firefox */
+}
+
+:-ms-input-placeholder {
+  /* Internet Explorer 10-11 */
+  color: rgba(255, 255, 255, 0.603);
+}
+
+::-ms-input-placeholder {
+  /* Microsoft Edge */
+  color: rgba(255, 255, 255, 0.616);
 }
