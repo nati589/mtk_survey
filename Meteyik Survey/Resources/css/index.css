@@ -1,11 +1,89 @@
 body {
-  font-family: var(--font-main);
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
+    Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
   position: absolute;
 }
 /* Header */
 
 header {
-  height: 100px;
+  width: 100%;
+  height: 80px;
+  background-color: var(--background);
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  right: 0;
+  transition: all 1000ms;
+}
+.nav-scrolled {
+  --logo: #00adba;
+  --nav: rgba(56, 52, 52, 0.753);
+  --background: white;
+  /* transition: background-color 1000ms ease-in-out; */
+  /* background-color: white; */
+}
+header div {
+  transition: all 1000ms;
+  /* transition: background-color 1000ms; */
+}
+#header-nav {
+  display: none;
+}
+header a {
+  text-decoration: none;
+  color: var(--logo);
+}
+.header-container {
+  width: 100%;
+  height: 100%;
+  /* color: white; */
+  background-color: var(--background);
+  margin: 0 auto;
+  /* transition: background-color 1000ms; */
+  /* transition: all 1000ms; */
+}
+.inner-heading {
+  display: flex;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  justify-content: space-between;
+  align-items: center;
+
+  /* margin: 0 auto; */
+}
+.inner-heading ul {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+}
+#header-logo {
+  padding-left: 7%;
+}
+#header-menu {
+  width: 12%;
+  height: 70%;
+  padding-right: 5%;
+}
+#header-menu a {
+  display: none;
+}
+#header-menu a:last-child {
+  flex-basis: 100%;
+  display: block;
+  /* border: 2px solid brown; */
+  padding: 5% 0%;
+  width: 100%;
+  height: 100%;
+  background-image: url("../images/menu.png");
+  /* background: no-repeat; */
+  /* background-position: center; */
+  background-size: cover;
+}
+#header-logo {
+  font-size: 2rem;
+  font-weight: 800;
 }
 
 /* Hero Section */
@@ -24,24 +102,42 @@ header {
   /* margin-top: 15%; */
   padding-bottom: 10%;
 }
+#herosection div {
+  padding: 25% 0% 15% 0%;
+}
 #herosection div h1 {
-  padding: 35% 15% 20% 15%;
-  font-size: clamp(3rem, 3rem, 3rem);
-  font-weight: 200;
+  padding: 15% 5%;
+  font-size: 3.5rem;
+  font-weight: 600;
 }
 #herosection div h2 {
   color: var(--lighter-text-color);
   font-size: 28px;
 }
 #herosection p {
-  display: none;
+  /* display: none; */
+  /* text-align: center; */
+  color: white;
+  padding: 5% 15%;
+  font-weight: 400;
+  font-size: 1.5rem;
 }
 #herosection button {
-  border: none;
-  color: var(--orange-color);
-  background-color: transparent;
-  font-size: 40px;
-  font-family: var(--font-main);
+  /* border: none; */
+  /* color: var(--orange-color); */
+  /* background-color: transparent; */
+  /* font-size: 40px; */
+  /* font-family: var(--font-main); */
+  border-radius: 5px;
+  padding: 0.3% 1.5% 0.5% 1.5%;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
+    Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  margin: 2%;
+  color: white;
+  background-color: rgb(223, 102, 37);
+  font-size: 1.5rem;
+  font-weight: 400;
+  letter-spacing: 2px;
 }
 /* Testimonial section */
 #testimonial {
@@ -199,41 +295,8 @@ footer li {
 @media only screen and (min-width: 620px) {
   /* Header */
 
-  header {
-    width: 100%;
-    height: 80px;
-    background-color: var(--background);
-    position: fixed;
-    z-index: 1;
-    top: 0;
-    right: 0;
-    transition: 1000ms ease-in background-color, 1000ms ease-in color;
-  }
-  .nav-scrolled {
-    --logo: #00adba;
-    --nav: rgba(56, 52, 52, 0.753);
-    --background: white;
-    transition: 1000ms ease-out background-color, 1000ms ease-out color;
-    /* background-color: white; */
-  }
-  header a {
-    text-decoration: none;
-    color: var(--logo);
-  }
   .header-container {
-    width: 90%;
-    height: 100%;
-    /* color: white; */
-    background-color: var(--background);
-    margin: 0 auto;
-    transition: 1000ms ease-out background-color, 1000ms ease-out color;
-  }
-  .inner-heading {
-    display: flex;
     width: 100%;
-    height: 100%;
-    text-align: center;
-    /* margin: 0 auto; */
   }
   .inner-heading ul {
     display: flex;
@@ -253,7 +316,6 @@ footer li {
     height: 100%;
     font-weight: 900;
     transition: 0.5s ease-in;
-
     /* text-align: center; */
   }
   #header-logo a:hover {
@@ -263,8 +325,9 @@ footer li {
   #header-logo span {
     height: 100%;
     display: flex;
-    justify-content: center;
+    justify-content: flex-end;
     align-items: center;
+    text-align: right;
   }
   .inner-heading #header-nav {
     flex-basis: 60%;
@@ -283,6 +346,9 @@ footer li {
     text-transform: uppercase;
     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
       Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  }
+  #header-nav {
+    display: block;
   }
   #header-nav a li::after {
     content: "";
@@ -320,6 +386,7 @@ footer li {
   }
   #header-menu a {
     padding-left: 15%;
+    display: block;
   }
   #header-menu a li {
     border: 1px solid var(--nav);

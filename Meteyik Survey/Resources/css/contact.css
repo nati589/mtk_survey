@@ -1,0 +1,12 @@
+section {
+  background-image: url("../images/contactbg.jpg");
+  background-size: cover;
+  /* z-index: 1; */
+}
+#container {
+  background-color: black;
+  color: white;
+  margin: 80px 0%;
+  padding: 5%;
+  z-index: -1;
+}
