@@ -392,7 +392,7 @@ footer li {
     border: 1px solid var(--nav);
     border-radius: 10px;
     color: var(--nav);
-    padding: 5% 15%;
+    padding: 5% 5px;
     font-weight: 300;
     letter-spacing: 3px;
     text-transform: uppercase;
