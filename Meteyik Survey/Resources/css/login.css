@@ -5,6 +5,7 @@ body {
 }
 body section {
   margin: 8% 0%;
-  overflow: hidden;
+  overflow: scroll;
+  overflow-x: hidden;
   justify-content: center;
 }

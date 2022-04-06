@@ -175,15 +175,7 @@
 .ta-right {
   text-align: right;
 }
-h1 {
-  color: var(--lighter-text-color);
-}
-h2 {
-  color: var(--darker-shade);
-}
-.btn {
-  color: var(--orange-color);
-}
+
 ::-webkit-scrollbar {
   width: 0.5em;
   /* scrollbar-width: thin; */

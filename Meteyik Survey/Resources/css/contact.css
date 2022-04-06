@@ -5,9 +5,9 @@ body {
   background: rgb(15, 67, 71);
   background: linear-gradient(
       125deg,
-      rgba(15, 67, 71, 0.8) 0%,
-      rgba(15, 67, 71, 0.6) 50%,
-      rgba(15, 67, 71, 0.8) 100%
+      rgba(13, 31, 43, 0.8) 0%,
+      rgba(13, 31, 43, 0.6) 50%,
+      rgba(13, 31, 43, 0.8) 100%
     ),
     url("../images/contactbg2.jpg");
   background-size: cover;

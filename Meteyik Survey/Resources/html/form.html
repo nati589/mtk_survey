@@ -11,33 +11,108 @@
     <link rel="stylesheet" href="../css/formlook.css">
     <meta name="description" content="Fill out surveys get rewards">
     <meta name="author" content="Natan Mekebib">
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/formlook.css">
+    <script src="../js/formgenerator.js"></script>
     <base href="../../index.html" target="_self">
-
-
     <title>Form Generator</title>
 </head>
 <body>
-    <header>
-        <div class="">
-            <h2>
-                Form Generator
-            </h2>
+    <header class="nav-scrolled">
+        <div class="header-container">
+            <div class="inner-heading">
+                <div id="header-logo">
+                    <span><a href="">mtk</a></span>
+                </div>
+                <div id="header-nav">
+                    <ul>
+                        <a href="#"><li>Home</li></a>
+                        <a href=""><li>Pricing</li></a>
+                        <a href="Resources/html/contact.html"><li>Contact</li></a>
+                        <a href=""><li>FAQ</li></a>
+                    </ul>
+                </div>
+                <div id="header-menu">
+                    <ul>
+                        <a href="Resources/html/login.html"><li>Login</li></a>
+                        <a href="Resources/html/usersignup.html"><li>Sign Up</li></a>
+                        <a href=""><li></li></a>
+                    </ul>
+                </div>
+            </div>
         </div>
     </header>
     <main>
-        <section id="generator">
-            <div id="view_output">
-                Lorem ipsum dolor sit amet consectetur.
+        <h1>Form Builder</h1>
+        <section>
+            <div id="generator">
+                <!-- <h2>Attributes</h2> -->
+                <div id="set_output">
+                    <div id="option1" class="options">
+                        <label for="texttype">Input type: </label>  
+                        <select id="texttype">
+                            <option value="text" selected>Text</option>
+                            <option value="email">E-mail</option>
+                            <option value="tel">Telephone</option>
+                            <option value="url">URL</option>
+                        </select>
+                        <br>
+                        <label for="label_input">Label: </label>
+                        <input type="text" id="label_input" value="">
+                        <br>
+                        <label for="placeholder_input">Placeholder: </label> 
+                        <input type="text" id="placeholder_input" value="Your Answer Here...">
+                        <br>
+                        <label for="requiredbox">Required Field: </label>  
+                        <select id="requiredbox">
+                            <option value="required" selected>Yes</option>
+                            <option value="none">No</option>
+                        </select>
+                        <span>
+                            <button class="button-26" role="button" onclick="cancelText(); stopRepeat();">Cancel</button>
+                            <button type="reset" class="button-26" role="button" onclick="stopRepeat(); genText(); textChange();">Apply</button>
+                        </span>
+                    </div>
+                    <div id="option2" class="options">
+                        <select id="language">
+                            <option value="en">English</option>
+                            <option value="es">Español</option>
+                            <option value="pt">Português</option>
+                        </select>
+                    </div>
+                    <div id="option3" class="options">Lorem ipsum dolor sit.</div>
+                    <div id="option4" class="options">Lorem ipsum dolor sit amet.</div>
+                </div>
+                <!-- <h2>Form Options</h2> -->
+                <div id="form_choice">
+                    <!-- <div></div> -->
+                    <div id="textbox" class="choice">
+                        <div>Text Field</div>
+                        <button class="button-26" role="button" onclick="choice('1'); ">Add +</button>
+                    </div>
+                    <div id="filebox" class="choice">
+                        <div>File</div>
+                        <button class="button-26" role="button" onclick="choice('2')">Add +</button>
+                    </div>
+                    <div id="choicebox" class="choice">
+                        <div>Multiple Choice</div>
+                        <button class="button-26" role="button" onclick="choice('3')">Add +</button>
+                    </div><div id="radiobox" class="choice">
+                        <div>Single Choice</div>
+                        <button class="button-26" role="button" onclick="choice('4')">Add +</button>
+                    </div>
+                </div>
             </div>
-            <div id="form_choice">
-                Lorem ipsum dolor sit amet.
+            <div id="form_page">
+                <h2>Output</h2>
+                <form action="" id="mainform">
+                    
+                </form>
+
             </div>
         </section>
-        <section id="form_page">
-            <div>
-                Lorem ipsum dolor, sit amet consectetur adipisicing elit. Beatae a eum recusandae voluptatum distinctio aspernatur, praesentium suscipit voluptatem repellat unde. Dolores, illum. Repudiandae, nobis suscipit expedita quis adipisci enim fuga?
-            </div>
-        </section>
+        
+        
     </main>
 </body>
 </html>
