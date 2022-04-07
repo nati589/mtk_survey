@@ -49,6 +49,16 @@
                 <!-- <h2>Attributes</h2> -->
                 <div id="set_output">
                     <div id="option1" class="options">
+                        <label for="titlebox">Title: </label>
+                        <input type="text" id="titlebox" value="">
+                        <label for="forminfobox">Description: </label>
+                        <input type="text" id="forminfobox" value="" size="50">
+                        <span class="usebuttons">
+                            <button class="button-26" role="button" onclick="cancelText(); stopRepeat();">Cancel</button>
+                            <button class="button-26" role="button" onclick="cancelText(); formHeader();">Apply</button>
+                        </span>
+                    </div>
+                    <div id="option2" class="options">
                         <label for="texttype">Input type: </label>  
                         <select id="texttype">
                             <option value="text" selected>Text</option>
@@ -68,43 +78,66 @@
                             <option value="required" selected>Yes</option>
                             <option value="none">No</option>
                         </select>
-                        <span>
+                        <span class="usebuttons">
                             <button class="button-26" role="button" onclick="cancelText(); stopRepeat();">Cancel</button>
-                            <button type="reset" class="button-26" role="button" onclick="stopRepeat(); genText(); textChange();">Apply</button>
+                            <button class="button-26" role="button" onclick="genText(); textChange(); cancelText(); ">Apply</button>
                         </span>
                     </div>
-                    <div id="option2" class="options">
-                        <select id="language">
-                            <option value="en">English</option>
-                            <option value="es">Español</option>
-                            <option value="pt">Português</option>
+                    <div id="option3" class="options">
+                        <label for="choicetype">Choice type: </label>  
+                        <select id="choicetype">
+                            <option value="radio" selected>Single value</option>
+                            <option value="checkbox">Multiple values</option>
                         </select>
+
+                        <label for="legend_input">Label: </label>
+                        <input type="text" id="legend_input" value="Your Choice Below...">
+                        <span id="options_container">
+                            <label for="options_input">Choice Values: </label>
+                            <input type="text" id="options_input" value="">
+                            <button class="button-26" role="button" onclick="choiceOptions();">Add</button>
+                            <button class="button-26" role="button" onclick="removeChoice();">Remove</button>    
+                        </span>
+                        <span class="usebuttons">
+                            <button class="button-26" role="button" onclick="cancelText(); cancelChoice(); stopRepeat();">Cancel</button>
+                            <button class="button-26" role="button" onclick="cancelText(); applyChoice();">Apply</button>
+                        </span>
                     </div>
-                    <div id="option3" class="options">Lorem ipsum dolor sit.</div>
-                    <div id="option4" class="options">Lorem ipsum dolor sit amet.</div>
+                    <div id="option4" class="options">
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Quam molestias, eius facere at corporis voluptates voluptatibus nobis assumenda cupiditate sunt aperiam quae animi porro culpa fugiat cumque qui. Minima quae velit blanditiis aspernatur maxime animi totam, eum porro doloremque? Vero nobis aut ea. Dolore, molestiae?
+                        <span class="usebuttons">
+                            <button class="button-26" role="button" onclick="cancelText(); stopRepeat();">Cancel</button>
+                            <button class="button-26" role="button" onclick="cancelText(); formHeader();">Apply</button>
+                        </span>
+                    </div>
                 </div>
+                
                 <!-- <h2>Form Options</h2> -->
                 <div id="form_choice">
                     <!-- <div></div> -->
+                    <div id="descriptionbox" class="choice">
+                        <div>Description</div>
+                        <button class="button-26" role="button" onclick="choice('1');">Add +</button>
+                    </div>
                     <div id="textbox" class="choice">
                         <div>Text Field</div>
-                        <button class="button-26" role="button" onclick="choice('1'); ">Add +</button>
-                    </div>
-                    <div id="filebox" class="choice">
-                        <div>File</div>
-                        <button class="button-26" role="button" onclick="choice('2')">Add +</button>
+                        <button class="button-26" role="button" onclick="choice('2'); stopRepeat();">Add +</button>
                     </div>
                     <div id="choicebox" class="choice">
-                        <div>Multiple Choice</div>
-                        <button class="button-26" role="button" onclick="choice('3')">Add +</button>
-                    </div><div id="radiobox" class="choice">
-                        <div>Single Choice</div>
+                        <div>Choice Field</div>
+                        <button class="button-26" role="button" onclick="choice('3'); genChoice();">Add +</button>
+                    </div>
+                    <div id="abox" class="choice">
+                        <div>Something Else Here</div>
                         <button class="button-26" role="button" onclick="choice('4')">Add +</button>
                     </div>
                 </div>
             </div>
             <div id="form_page">
-                <h2>Output</h2>
+                <h2 id="formtitle"></h2>
+                <p id="formdescription">
+                    
+                </p>
                 <form action="" id="mainform">
                     
                 </form>
