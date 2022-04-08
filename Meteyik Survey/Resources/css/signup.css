@@ -43,29 +43,34 @@ body section {
   display: flex;
   margin: 3% 20%;
   overflow: hidden;
+  align-items: center;
+  justify-content: center;
   /* height: 90%; */
   /* backdrop-filter: blur(5px); */
   /* box-shadow: 0 0 200px rgba(255, 255, 255, 0.5); */
 }
 #container div {
   flex-basis: 50%;
-  border-radius: 0px 10px 10px 0px;
+  /* width: 50%; */
+  border-radius: 10px;
   filter: none;
 }
-#left-card {
+/* #left-card {
 }
 #left-card img {
-  /* width: 100%; */
+  width: 100%;
   border-radius: 10px 0px 0px 10px;
   height: 100.1%;
   overflow: hidden;
-}
+} */
 #right-card {
-  backdrop-filter: blur(45px);
+  backdrop-filter: blur(15px);
+  background-color: rgba(0, 0, 0, 0.588);
   padding: 4%;
   /* height: 90%; */
   color: white;
   text-align: center;
+
   /* overflow: hidden; */
   /* height: 200%; */
 }
@@ -89,9 +94,11 @@ input {
   border: none;
   width: 15rem;
   height: 2rem;
+  padding-left: 2%;
   border-bottom: 2px solid var(--lighter-primary-color);
   background-color: rgba(255, 255, 255, 0.246);
   border-radius: 2px;
+  color: whitesmoke;
   outline: none;
   text-align: left;
 }
@@ -105,6 +112,9 @@ input.btn {
   text-align: center;
   border-radius: 2rem;
 }
+input.btn:hover {
+  background-color: var(--primary-color);
+}
 #logo {
   font-size: x-large;
 }
@@ -114,12 +124,12 @@ input.btn {
     overflow: scroll;
     overflow-x: hidden;
   }
-  #left-card {
+  /* #left-card {
     display: none;
-  }
-  #container div {
+  } */
+  /* #container div {
     flex-basis: 100%;
-  }
+  } */
   #container {
     margin: 15% 5% 2% 5%;
 

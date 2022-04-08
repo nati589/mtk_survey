@@ -3,27 +3,28 @@
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
     Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
 }
-
+body {
+  background: url("../images/formbg2.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: auto;
+}
 header {
   width: 100%;
   height: 80px;
   background-color: var(--background);
-  /* position: fixed; */
   z-index: 1;
   top: 0;
   right: 0;
   transition: all 1000ms;
 }
 .nav-scrolled {
-  --logo: #1652f0;
+  --logo: #00adba;
   --nav: rgba(56, 52, 52, 0.753);
   --background: white;
-  /* transition: background-color 1000ms ease-in-out; */
-  /* background-color: white; */
 }
 header div {
   transition: all 1000ms;
-  /* transition: background-color 1000ms; */
 }
 .header-container {
   width: 100%;
@@ -46,7 +47,6 @@ header div {
   height: 100%;
   font-weight: 900;
   transition: 0.5s ease-in;
-  /* text-align: center; */
 }
 #header-logo a:hover {
   color: var(--orange-color);
@@ -83,7 +83,7 @@ header div {
 #header-nav a li::after {
   content: "";
   position: absolute;
-  background-color: #1652f0;
+  background-color: var(--primary-color);
   height: 1.5px;
   width: 0;
   left: 0;
@@ -94,7 +94,7 @@ header div {
   width: 100%;
 }
 #header-nav a:hover li {
-  color: #1652f0;
+  color: var(--primary-color);
 }
 #header-menu {
   flex-basis: 40%;
@@ -112,7 +112,6 @@ header div {
   border-radius: 5px;
   color: var(--nav);
   padding: 5% 5px;
-
   font-weight: 300;
   letter-spacing: 3px;
   text-transform: uppercase;
@@ -122,13 +121,14 @@ header div {
   border: 1px solid var(--text);
   transition: 0.5s ease-in-out;
 }
-#header-menu a:last-child {
+#header-menu button {
   display: none;
+  border: none;
+  background-color: transparent;
 }
 #header-menu a:nth-child(2) li {
-  background-color: #0f3db9;
+  background-color: rgb(42, 129, 141);
   border: 1px solid rgb(42, 129, 141);
-  /* margin-left: 5%; */
   color: white;
   font-weight: 100;
 }
@@ -144,11 +144,8 @@ header a {
 .header-container {
   width: 100%;
   height: 100%;
-  /* color: white; */
   background-color: var(--background);
   margin: 0 auto;
-  /* transition: background-color 1000ms; */
-  /* transition: all 1000ms; */
 }
 .inner-heading {
   display: flex;
@@ -157,8 +154,6 @@ header a {
   text-align: center;
   justify-content: space-between;
   align-items: center;
-
-  /* margin: 0 auto; */
 }
 .inner-heading ul {
   display: flex;
@@ -174,58 +169,55 @@ header a {
   height: 70%;
   padding-right: 5%;
 }
-
 #header-logo {
   font-size: 2rem;
   font-weight: 800;
 }
-
 body header h2 {
   font-size: 2rem;
 }
 main {
-  /* border: 2px solid black; */
-  /* display: flex; */
   height: 100%;
 }
 h1 {
   text-align: center;
-  color: #1652f0;
-  border-top: 2px solid black;
-  border-bottom: 2px solid black;
-  padding-top: 10px;
-  padding-bottom: 10px;
+  color: var(--orange-color);
+  background-color: rgba(0, 0, 0, 0.771);
+  padding-top: 15px;
+  padding-bottom: 15px;
   margin-bottom: 5px;
+  font-size: 2rem;
 }
 section {
   display: flex;
-  /* margin: 0% 10%; */
   width: 100%;
   height: 100%;
   align-items: center;
   justify-content: space-around;
 }
 section div {
-  border: 2px solid black;
+  border: 2px solid #1f777d;
   flex-basis: 35%;
-  /* height: 80px; */
+}
+#set_output {
+  background-color: rgba(0, 0, 0, 0.298);
 }
 h2 {
   text-align: center;
   padding: 2% 0%;
+}
+input {
+  caret-color: black;
 }
 #generator {
   width: 100%;
   height: 100%;
   margin: 1% 0%;
   border: none;
-  color: #1652f0;
+  color: #1f777d;
   font-weight: 500;
-
-  /* height: 200px; */
 }
 .choice {
-  /* border: none; */
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -233,22 +225,21 @@ h2 {
   margin: 1%;
   border-radius: 6px;
   background-color: whitesmoke;
-  /* border: 2px solid var(--logo); */
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
     Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
-  border: 2px solid #1652f0;
+  border: 2px solid #1f777d;
 }
 .choice div {
   border: none;
   font-size: larger;
   font-weight: 700;
   letter-spacing: 1px;
-  color: #1652f0;
+  color: #1f777d;
 }
 .button-26 {
   appearance: button;
-  background-color: #1652f0;
-  border: 1px solid #1652f0;
+  background-color: var(--orange-color);
+  border: 1px solid var(--orange-color);
   border-radius: 4px;
   box-sizing: border-box;
   color: #ffffff;
@@ -268,46 +259,31 @@ h2 {
   touch-action: manipulation;
   width: fit-content;
 }
-
 .button-26:disabled {
   opacity: 0.5;
 }
-
 .button-26:focus {
   outline: 0;
 }
-
 .button-26:hover {
-  background-color: #0a46e4;
-  border-color: #0a46e4;
+  background-color: #228b93;
+  border-color: #1b848c;
 }
-
 .button-26:active {
-  background-color: #0039d7;
-  border-color: #0039d7;
-}
-/* .choice button {
-  font-size: large;
-  padding: 1%;
-  border-radius: 6px;
-  width: 15%;
-  letter-spacing: 1px;
   background-color: var(--primary-color);
-  color: white;
-} */
+  border-color: var(--primary-color);
+}
 #set_output {
   width: 100%;
   height: 270px;
   position: relative;
   padding: 3%;
-  /* padding-bottom: 1%; */
   border-radius: 6px;
   margin-bottom: 2%;
 }
 #set_output div {
   height: 100%;
   display: none;
-  /* border: none; */
 }
 #option1 { 
   flex-wrap: wrap;
@@ -315,7 +291,6 @@ h2 {
   border: none;
 }
 #option1 input {
-  /* width: 20%; */
   height: 15%;
   padding: 0%;
   padding-left: 2%;
@@ -330,28 +305,24 @@ h2 {
   overflow-y: scroll;
   border: none;
 }
+#option4 { 
+  flex-wrap: wrap;
+  overflow-y: scroll;
+  border: none;
+}
 #option3 input {
   padding: 0%;
   height: 15%;
   padding-left: 2%;
-  /* display: block; */
 }
 #options_container {
-  padding: 2% 0% 2% 2%;
+  padding: 2% 0% 3% 2%;
   margin-top: 2%;
   margin-left: 0%;
-  width: 90%;
-  /* display: flex; */
-  /* flex-wrap: wrap; */
-  /* align-items: center; */
-  /* justify-content: center; */
+  width: 100%;
 }
 #options_container > * {
-  /* width: 45%; */
   margin: 1% 0%;
-
-  /* height: 15%; */
-
 }
 #options_container button {
   width: 45%;
@@ -360,41 +331,23 @@ h2 {
 #options_container input { 
   height: 40%;
   width: 50%;
-  border: 2px solid #1652f0;
-  /* display: block; */
+  border: 2px solid #1f777d;
 }
-
-
-/* .options {
-  display: flex;
-  width: 100%;
-  flex-wrap: wrap;
-}
-.options > * {
-  flex-basis: 30%;
-  justify-content: flex-end;
-  align-items: flex-end;
-} */
 .options > * {
   width: 50%;
   padding: 0% 0%;
   margin: 0.5% 0%;
-  /* height: 15%; */
-  border: 2px solid #1652f0;
+  border: 2px solid #1f777d;
 
-  /* text-align: center; */
 }
 .options input {
   padding: 0%;
   padding-left: 2%;
-  /* height: auto; */
-  /* width: 60%; */
 }
 .options label {
   font-size: larger;
   width: 40%;
   border: none;
-  /* flex-basis: 10%; */
 }
 .usebuttons {
   display: flex;
@@ -417,9 +370,12 @@ h2 {
   margin: 2% 0%;
   padding: 1%;
   height: 500px;
-  overflow-y: scroll;
   overflow-x: hidden;
-  border-radius: 6px;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+
+  border-radius: 3px;
+  border: none;
+  background-color: whitesmoke;
 }
 #form_page h2 {
   padding-bottom: 3%;
@@ -429,11 +385,13 @@ h2 {
   text-align: center;
 }
 #form_page form {
-  /* overflow: scroll; */
   overflow: hidden;
-  border: 2px solid black;
+  overflow-y: scroll;
+  max-height: 400px;
   padding: 2% 7%;
-  border-radius: 6px;
+  background-color: white;
+  border-radius: 4px;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
 }
 #form_page form > * {
   display: block;
@@ -457,6 +415,46 @@ h2 {
 #form_page span {
   display: block;
 }
-/* #form_page div {
-  min-height: 50px;
-} */
+#form_page span > * {
+  margin: 0% 2%;
+}
+
+@media screen and (max-width: 900px) {
+  /* Header */
+  #header-menu {
+    width: 12%;
+    height: 70%;
+    padding-right: 5%;
+  }
+  #header-menu a {
+    display: none;
+  }
+  #header-menu a li {
+    border: none;
+    padding: 0%;
+  }
+  #header-menu button {
+    flex-basis: 20%;
+    display: block;
+    padding: 0% 5%;
+    width: 70px;
+    height: 50px;
+    background-image: url("../images/menu.png");
+    background-position: center;
+    background-size: cover;
+  }
+  #header-nav {
+    display: none;
+  }
+  main {
+  }
+  section {
+    display: block;
+    padding: 0% 5%;
+
+  }
+  #form_page {
+    height: 300px;
+  }
+
+}

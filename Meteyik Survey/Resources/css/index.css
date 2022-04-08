@@ -69,7 +69,7 @@ header a {
 #header-menu a {
   display: none;
 }
-#header-menu a:last-child {
+#header-menu button {
   flex-basis: 100%;
   display: block;
   /* border: 2px solid brown; */
@@ -80,12 +80,14 @@ header a {
   /* background: no-repeat; */
   /* background-position: center; */
   background-size: cover;
+  background-color: transparent;
+  border: none;
 }
 #header-logo {
   font-size: 2rem;
   font-weight: 800;
 }
-
+ 
 /* Hero Section */
 
 #herosection {
@@ -109,6 +111,7 @@ header a {
   padding: 15% 5%;
   font-size: 3.5rem;
   font-weight: 600;
+  color: white;
 }
 #herosection div h2 {
   color: var(--lighter-text-color);
@@ -292,7 +295,7 @@ footer li {
 }
 
 /* Desktop and pc */
-@media only screen and (min-width: 620px) {
+@media only screen and (min-width: 900px) {
   /* Header */
 
   .header-container {
@@ -380,7 +383,7 @@ footer li {
   #header-menu {
     flex-basis: 30%;
     width: 100%;
-    font-size: 1.35rem;
+    font-size: 1.2rem;
     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
       Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
   }
@@ -390,7 +393,7 @@ footer li {
   }
   #header-menu a li {
     border: 1px solid var(--nav);
-    border-radius: 10px;
+    border-radius: 5px;
     color: var(--nav);
     padding: 5% 5px;
     font-weight: 300;
@@ -402,7 +405,7 @@ footer li {
     border: 1px solid var(--text);
     transition: 0.5s ease-in-out;
   }
-  #header-menu a:last-child {
+  #header-menu button {
     display: none;
   }
   #header-menu a:nth-child(2) li {
@@ -461,6 +464,7 @@ footer li {
   body #herosection button {
     /* border: 3px solid var(--orange-color); */
     border-radius: 5px;
+    border: var(--orange-color);
     padding: 0.3% 1.5% 0.5% 1.5%;
     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
       Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;

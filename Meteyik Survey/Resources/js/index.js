@@ -17,3 +17,12 @@ const sectionOneObserver = new IntersectionObserver(entries => {
 }, sectionOneOptions); 
 
 sectionOneObserver.observe(sectionOne);
+
+function hamBurger() {
+    let x = document.querySelector('aside');
+    if (x.style.display === "block") {
+      x.style.display = "none";
+    } else {
+      x.style.display = "block";
+    }
+  } 

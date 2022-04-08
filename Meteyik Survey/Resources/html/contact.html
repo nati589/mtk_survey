@@ -14,6 +14,7 @@
     <link rel="stylesheet" href="../css/style.css">
     <!-- <link rel="stylesheet" href="../css/index.css"> -->
     <link rel="stylesheet" href="../css/contact.css">
+    <script src="../js/index.js"></script>
     <base href="../../index.html" target="_self">
 
     
@@ -28,8 +29,8 @@
                 </div>
                 <div id="header-nav">
                     <ul>
-                        <a href="#"><li>Home</li></a>
-                        <a href=""><li>Pricing</li></a>
+                        <a href=""><li>Home</li></a>
+                        <a href="Resources/html/form.html"><li>BUILD</li></a>
                         <a href="Resources/html/contact.html"><li>Contact</li></a>
                         <a href=""><li>FAQ</li></a>
                     </ul>
@@ -38,12 +39,40 @@
                     <ul>
                         <a href="Resources/html/login.html"><li>Login</li></a>
                         <a href="Resources/html/usersignup.html"><li>Sign Up</li></a>
-                        <a href=""><li></li></a>
+                        <button onclick="hamBurger()"><li></li></button>
                     </ul>
                 </div>
             </div>
         </div>
     </header>
+    <aside> 
+        <div id="asideinfo">
+            <ul>
+                <li>
+                    <a href="">Home</a>
+                </li>
+                <li>
+                    <a href="Resources/html/form.html">BUILD</a>
+                </li>
+                <li>
+                    <a href="Resources/html/contact.html">Contact</a>
+                </li>
+                <li>
+                    <a href="">FAQ</a>
+                </li>
+            </ul>
+        </div>
+        <div id="signin">
+            <ul>
+                <li>
+                    <a href="Resources/html/login.html">Login</a>
+                </li>
+                <li>
+                    <a href="Resources/html/usersignup.html">Sign Up</a>
+                </li>
+            </ul>
+        </div>
+    </aside>
     <main>
         <section id="contact-top">
                <h1>Contact Us</h1>
@@ -110,7 +139,7 @@
                         <input type="textarea" id="message" class="textbox" required>
                     </div>
                     <div>
-                        <input type="submit" name="login" value="Send" class="btn">
+                        <button type="submit" name="login" class="button-26">Send</button>
                     </div>
                 </form>
                 

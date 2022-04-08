@@ -7,13 +7,13 @@
     <link rel="stylesheet" href="../css/style.css">
     <meta name="keywords" content="Survey Form Research meteyik mtk Rewards Ethiopia">
     <link href='https://fonts.googleapis.com/css?family=Bree Serif' rel='stylesheet'>
-    <!-- <link rel="shortcut icon" href="../imag"> -->
     <link rel="stylesheet" href="../css/formlook.css">
     <meta name="description" content="Fill out surveys get rewards">
     <meta name="author" content="Natan Mekebib">
     <link rel="stylesheet" href="../css/style.css">
     <link rel="stylesheet" href="../css/formlook.css">
     <script src="../js/formgenerator.js"></script>
+    <script src="../js/index.js"></script>
     <base href="../../index.html" target="_self">
     <title>Form Generator</title>
 </head>
@@ -26,8 +26,8 @@
                 </div>
                 <div id="header-nav">
                     <ul>
-                        <a href="#"><li>Home</li></a>
-                        <a href=""><li>Pricing</li></a>
+                        <a href=""><li>Home</li></a>
+                        <a href="Resources/html/form.html"><li>BUILD</li></a>
                         <a href="Resources/html/contact.html"><li>Contact</li></a>
                         <a href=""><li>FAQ</li></a>
                     </ul>
@@ -36,29 +36,57 @@
                     <ul>
                         <a href="Resources/html/login.html"><li>Login</li></a>
                         <a href="Resources/html/usersignup.html"><li>Sign Up</li></a>
-                        <a href=""><li></li></a>
+                        <button onclick="hamBurger()"><li></li></button>
                     </ul>
                 </div>
             </div>
         </div>
     </header>
+    <aside> 
+        <div id="asideinfo">
+            <ul>
+                <li>
+                    <a href="">Home</a>
+                </li>
+                <li>
+                    <a href="Resources/html/form.html">BUILD</a>
+                </li>
+                <li>
+                    <a href="Resources/html/contact.html">Contact</a>
+                </li>
+                <li>
+                    <a href="">FAQ</a>
+                </li>
+            </ul>
+        </div>
+        <div id="signin">
+            <ul>
+                <li>
+                    <a href="Resources/html/login.html">Login</a>
+                </li>
+                <li>
+                    <a href="Resources/html/usersignup.html">Sign Up</a>
+                </li>
+            </ul>
+        </div>
+    </aside>
     <main>
         <h1>Form Builder</h1>
         <section>
             <div id="generator">
                 <!-- <h2>Attributes</h2> -->
                 <div id="set_output">
-                    <div id="option1" class="options">
+                    <div id="option1" class="options example">
                         <label for="titlebox">Title: </label>
                         <input type="text" id="titlebox" value="">
                         <label for="forminfobox">Description: </label>
                         <input type="text" id="forminfobox" value="" size="50">
                         <span class="usebuttons">
                             <button class="button-26" role="button" onclick="cancelText(); stopRepeat();">Cancel</button>
-                            <button class="button-26" role="button" onclick="cancelText(); formHeader();">Apply</button>
+                            <button class="button-26" role="button" onclick="cancelText(); formHeader(); stopRepeat();">Apply</button>
                         </span>
                     </div>
-                    <div id="option2" class="options">
+                    <div id="option2" class="options example">
                         <label for="texttype">Input type: </label>  
                         <select id="texttype">
                             <option value="text" selected>Text</option>
@@ -80,10 +108,10 @@
                         </select>
                         <span class="usebuttons">
                             <button class="button-26" role="button" onclick="cancelText(); stopRepeat();">Cancel</button>
-                            <button class="button-26" role="button" onclick="genText(); textChange(); cancelText(); ">Apply</button>
+                            <button class="button-26" role="button" onclick="genText(); textChange(); cancelText(); stopRepeat();">Apply</button>
                         </span>
                     </div>
-                    <div id="option3" class="options">
+                    <div id="option3" class="options example">
                         <label for="choicetype">Choice type: </label>  
                         <select id="choicetype">
                             <option value="radio" selected>Single value</option>
@@ -100,32 +128,30 @@
                         </span>
                         <span class="usebuttons">
                             <button class="button-26" role="button" onclick="cancelText(); cancelChoice(); stopRepeat();">Cancel</button>
-                            <button class="button-26" role="button" onclick="cancelText(); applyChoice();">Apply</button>
+                            <button class="button-26" role="button" onclick="cancelText(); applyChoice(); stopRepeat();">Apply</button>
                         </span>
                     </div>
-                    <div id="option4" class="options">
+                    <div id="option4" class="options example">
                         Lorem ipsum dolor sit amet consectetur adipisicing elit. Quam molestias, eius facere at corporis voluptates voluptatibus nobis assumenda cupiditate sunt aperiam quae animi porro culpa fugiat cumque qui. Minima quae velit blanditiis aspernatur maxime animi totam, eum porro doloremque? Vero nobis aut ea. Dolore, molestiae?
                         <span class="usebuttons">
                             <button class="button-26" role="button" onclick="cancelText(); stopRepeat();">Cancel</button>
-                            <button class="button-26" role="button" onclick="cancelText(); formHeader();">Apply</button>
+                            <button class="button-26" role="button" onclick="cancelText(); stopRepeat();">Apply</button>
                         </span>
                     </div>
                 </div>
-                
                 <!-- <h2>Form Options</h2> -->
                 <div id="form_choice">
-                    <!-- <div></div> -->
                     <div id="descriptionbox" class="choice">
                         <div>Description</div>
                         <button class="button-26" role="button" onclick="choice('1');">Add +</button>
                     </div>
                     <div id="textbox" class="choice">
                         <div>Text Field</div>
-                        <button class="button-26" role="button" onclick="choice('2'); stopRepeat();">Add +</button>
+                        <button class="button-26" role="button" onclick="choice('2'); ">Add +</button>
                     </div>
                     <div id="choicebox" class="choice">
                         <div>Choice Field</div>
-                        <button class="button-26" role="button" onclick="choice('3'); genChoice();">Add +</button>
+                        <button class="button-26" role="button" onclick="choice('3');">Add +</button>
                     </div>
                     <div id="abox" class="choice">
                         <div>Something Else Here</div>
@@ -133,19 +159,16 @@
                     </div>
                 </div>
             </div>
-            <div id="form_page">
-                <h2 id="formtitle"></h2>
+            <div id="form_page" class="example">
+                <h2 id="formtitle">Title of your form</h2>
                 <p id="formdescription">
-                    
+                    Leave a description for the users.
                 </p>
-                <form action="" id="mainform">
-                    
-                </form>
+                <form action="" id="mainform" class="example">
 
+                </form>
             </div>
-        </section>
-        
-        
+        </section>    
     </main>
 </body>
 </html>

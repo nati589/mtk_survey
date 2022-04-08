@@ -191,3 +191,114 @@
   /* border: solid #f5f5f5; */
   /* border-radius: 100vw; */
 }
+input {
+  caret-color: white;
+}
+.button-26 {
+  appearance: button;
+  background-color: var(--primary-color);
+  border: 1px solid var(--primary-color);
+  border-radius: 4px;
+  box-sizing: border-box;
+  color: #ffffff;
+  cursor: pointer;
+  font-family: Graphik, -apple-system, system-ui, "Segoe UI", Roboto, Oxygen,
+    Ubuntu, Cantarell, "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
+  font-size: 17px;
+  line-height: 1.15;
+  overflow: visible;
+  padding: 12px 16px;
+  position: relative;
+  text-align: center;
+  text-transform: none;
+  transition: all 80ms ease-in-out;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  width: fit-content;
+}
+
+.button-26:disabled {
+  opacity: 0.5;
+}
+
+.button-26:focus {
+  outline: 0;
+}
+
+.button-26:hover {
+  background-color: #02d2e1;
+  border-color: #02cddc;
+}
+
+.button-26:active {
+  background-color: var(--primary-color);
+  border-color: var(--primary-color);
+}
+
+ /* Aside Info */
+ aside {
+  display: none;
+  width: 100%;
+  padding-top: 80px;
+  background-color: black;
+  /* transition: 0.3s all ease-in-out; */
+}
+#asideinfo {
+  width: 100%;
+  /* background-color: var(--primary-color); */
+}
+#asideinfo li {
+  width: 100%;
+  text-align: center;
+  /* margin: 1% 0%; */
+  /* background-color: white; */
+}
+#asideinfo a {
+ text-decoration: none;
+ color: var(--primary-color);
+ /* border: 3px solid var(--primary-color); */
+ width: 100%;
+ display: block;
+ padding: 10px 0%;
+ font-size: larger;
+}
+#signin ul {
+  display: flex;
+  padding-top: 5%;
+  padding-bottom: 2%;
+  justify-content: space-between;
+  /* background-color: white; */
+}
+#signin li {
+ text-align: center;
+ flex-basis: 45%;
+ /* width: 100%;  */
+}
+#signin a {
+ text-decoration: none;
+ color: var(--orange-color);
+ border: 2px solid var(--orange-color);
+ border-radius: 5px;
+ /* background-color: white; */
+ width: 100%;
+ display: block;
+ padding: 10px 0%;
+ font-size: x-large;
+
+}
+.example {
+  overflow-x: scroll;
+  overflow-y: scroll; /* Add the ability to scroll */
+}
+
+/* Hide scrollbar for Chrome, Safari and Opera */
+.example::-webkit-scrollbar {
+    display: none;
+}
+
+/* Hide scrollbar for IE, Edge and Firefox */
+.example {
+  -ms-overflow-style: none;  /* IE and Edge */
+  scrollbar-width: none;  /* Firefox */
+}

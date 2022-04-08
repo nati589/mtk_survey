@@ -1,11 +1,8 @@
-body {
+/* body {
   overflow: scroll;
   overflow-x: hidden;
   height: 100vh;
-}
+} */
 body section {
-  margin: 8% 0%;
-  overflow: scroll;
-  overflow-x: hidden;
-  justify-content: center;
-}
+  padding: 8% 0%;
+} 
