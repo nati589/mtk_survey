@@ -1,3 +1,5 @@
+let testcounter = 1;
+
 const headersection = document.querySelector('header');
 const sectionOne = document.querySelector('section#herosection');
 
@@ -26,3 +28,28 @@ function hamBurger() {
       x.style.display = "block";
     }
   } 
+  function prevTestimony() {
+    testcounter--;
+    if (testcounter < 1) {
+      testcounter = 4;
+    }
+    for (let c = 1; c < 5; c++) {
+      let remove = document.getElementById(`t${c}`);
+      remove.style.display = "none";
+    }
+    let previous = document.getElementById(`t${testcounter}`);
+    previous.style.display = "block";
+  }
+
+function nextTestimony() {
+  testcounter++;
+  if (testcounter > 4) {
+    testcounter = 1;
+  }
+  for (let c = 1; c < 5; c++) {
+    let remove = document.getElementById(`t${c}`);
+    remove.style.display = "none";
+  }
+  let next = document.getElementById(`t${testcounter}`);
+  next.style.display = "block";
+}
