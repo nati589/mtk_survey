@@ -162,10 +162,18 @@ header a {
   margin-top: 15%;
   padding: 5% 7%;
 }
-.testimonybox q {
+.testimonybox:hover {
+  transform: scale(1.2);
+  /* transform: rotate(360deg); */
+  transition: 1s all;
+  background-color: #002728;
+  color: white;
+  /* transition: all 0.3s ease-in-out; */
+}
+ q {
   font-size: 175%;
   font-family: var(--font-quote);
-  color: var(--light-accent-color);
+  color: var(--lighter-orange-color);
   padding: 5% 0%;
 }
 .testimonybox h3 {
@@ -217,6 +225,7 @@ header a {
 #accounts h2 {
   font-size: 32px;
   padding: 10% 0%;
+  color: #002728b1;
 }
 .button {
   font-size: 2rem;
@@ -242,9 +251,12 @@ header a {
 }
 /* Footer */
 footer {
-  background-color: var(--primary-color);
+  backdrop-filter: blur(15px);
+  background-color: #002728;
   text-decoration: none;
   color: white;
+  /* font-weight: 400; */
+  /* letter-spacing: 1px; */
 }
 footer a:any-link {
   color: white;
@@ -259,6 +271,8 @@ footer li {
 }
 .foot-top {
   padding: 6%;
+  font-size: larger;
+  /* font-weight: 600; */
 }
 .foot {
   padding: 4%;
@@ -267,30 +281,37 @@ footer li {
   padding: 2%;
 }
 .foot button:hover {
-  color: var(--orange-color);
+  color: var(--primary-color);
   transition: 0.3s;
 }
 .foot a:hover {
-  color: var(--orange-color);
+  color: var(--primary-color);
   transition: 0.3s;
 }
 .foot .logo {
-  font-size: 30px;
+  font-size: xx-large;
+  font-weight: 600;
 }
 .foot input {
-  color: rgba(255, 255, 255, 0.5);
-  background-color: var(--lighter-primary-color);
+  color: whitesmoke;
+  background-color: transparent;
   border: none;
+  border-bottom: 1px solid white;
+  padding: 0.4% 0.7%;
+  border-radius: 3px;
   font-size: 16px;
 }
 .foot button {
   color: white;
-  border: none;
+  padding: 0.4% 0.7%;
+  border: 1px solid white;
+  border-radius: 2px;
+  /* border: none; */
   background-color: transparent;
-  font-size: 16px;
+  font-size: 17px;
 }
 #foot-bottom #foot-right a:hover {
-  color: var(--orange-color);
+  color: var(--lighter-orange-color);
   transition: 0.3s;
 }
 
@@ -482,14 +503,14 @@ footer li {
   }
   #testimony-container {
     display: flex;
-    height: 80vh;
+    height: auto;
   }
   .testimonybox {
     flex-basis: 25%;
     padding: 2%;
     margin: 2%;
     overflow: hidden;
-    height: 55vh;
+    height: auto;
     border-radius: 15 px;
     border-top: 5px solid var(--orange-color);
     box-shadow: rgb(38, 57, 77) 0px 20px 30px -10px;
@@ -500,7 +521,7 @@ footer li {
   #testimony-container .testimonybox q {
     font-size: 130%;
   }
-  .testimonybox:hover {
+  /* .testimonybox:hover {
     overflow: visible;
     height: 80%;
     transition: 0.1s;
@@ -511,65 +532,98 @@ footer li {
   }
   #testimony-container .testimonybox:hover q {
     font-size: 150%;
-  }
-  .testimonybox:hover q {
+  } */
+  /* .testimonybox:hover q {
     color: var(--white-color);
     font-size: 150%;
-  }
+  } */
   .testimonybox img {
     height: 13%;
     width: auto;
   }
-  .testimonybox:hover img {
-    height: 13%;
-    width: auto;
+
+  #benefits * {
+    padding: 0%;
   }
-  #benefits {
-    padding: 5%;
-    background-size: cover;
-    background-repeat: no-repeat;
-    overflow: hidden;
+  #benefits h2 {
+    color: var(--primary-color);
+    font-weight: 700;
+    font-size: 32px;
+    padding: 3% 0% 0% 0%;
   }
-  #benefits .benefit img {
-    border-radius: 10px;
+  #benefits h3 {
+    color: var(--orange-color);
+    font-weight: 500;
+    font-size: 28px;
+    padding: 2%;
   }
-  .benefit {
-    display: flex;
-    text-align: center;
-    position: relative;
-    padding: 5%;
-    margin: 5% 0% 25% 0%;
-  }
-  .benefit:nth-child(2n) {
-    /* flex-direction: row-reverse; */
-  }
-  .benefit img {
-    flex-basis: 50%;
-    padding: 5%;
-    position: absolute;
-    left: 0;
-    top: 0;
-    bottom: 0;
-    width: 60%;
-    height: 330%;
+  #benefits h4 {
+    font-size: 26;
   }
   #benefits .benefit p {
-    flex-basis: 50%;
-    /* padding: 0% 5% 5% 5%; */
+    font-size: 100%;
+    font-family: var(--font-secondary);
+    padding: 0% 0%;
+  }
+  #benefits .benefit img {
+    padding: 0%;
+    border-radius: 25px;
+  }
+  /* .testimonybox:hover img {
+    height: 13%;
+    width: auto;
+  } */
+  #benefits {
+    background-color: white;
+    color: black;
+    padding: 1% 0%;
+  }
+  #benefits .benefit {
+    display: flex;
+    justify-content: center; 
+    align-items: center; 
+    width: 100%;
+    padding: 2% 0%;
+    position: relative;
+  }
+  #benefits .benefit:nth-of-type(2) {
+    background-color: #f1f1f1;
+  }
+  #benefits .benefit:nth-of-type(4) {
+    background-color: #f1f1f1;
+  }
+  #benefits .benefit img {
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    border-radius: 0px;
+    /* flex-basis: 40%; */
+    width: 700px;
+    height: 500px;
+    flex-basis: 30%;
+    margin: 0% 1% 0% 0%;
+    align-items: center;
+    border-radius: 3px;
+  }
+  #benefits .benefit p {
+    flex-basis: 30%;
+    /* border: 2px solid black; */
+    width: 400px;
+    height: 200px;
+    font-size: 25px;
+    overflow: scroll;
+    margin: 0% 2%;
+    background-color: #002728;
+    color: white;
+    padding: 1% 2%;
+    border-radius: 15px;
     position: absolute;
-    right: 0;
-    /* left: 0; */
     bottom: 0;
-    font-size: 1.75rem;
-    top: 0;
-    width: 30%;
-    height: 100%;
-    /* box-shadow: rgba(0, 0, 0, 0.06) 0px 2px 4px 0px inset; */
-    /* overflow: hidden; */
+    left: 60%;
+    /* box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px; */
+
+
+    /* overflow-y: scroll; */
   }
-  .benefit p:hover {
-    /* overflow-y: auto; */
-  }
+
   #accounts {
     /* position: relative; */
     text-align: center;
@@ -603,15 +657,16 @@ footer li {
   }
   .button:hover {
     color: var(--lighter-bgshade-color);
+    background-color: var(--orange-color);
   }
   .foot-top {
-    padding: 2%;
+    padding: 0.5%;
   }
   .foot {
-    padding: 2%;
+    padding: 1%;
   }
   .foot a {
-    padding: 2%;
+    padding: 1.5% 1%;
   }
 }
 /* @media only screen and (min-width: 620px) {

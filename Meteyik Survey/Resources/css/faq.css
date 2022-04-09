@@ -1,0 +1,19 @@
+main {
+    margin-top: 80px;
+}
+#container {
+    background-color: rgba(0, 0, 0, 0.867);
+    width: 500px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin: 0% 30%;
+    /* backdrop-filter: blur(20px); */
+}
+#containers .dropdown {
+
+}
+details {
+    /* display: block; */
+}
