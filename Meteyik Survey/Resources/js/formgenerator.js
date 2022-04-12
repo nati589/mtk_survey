@@ -14,6 +14,7 @@ function genText() {
     let textbox = document.createElement('input');
     labelbox.setAttribute('for', `text${textcount}`);
     labelbox.setAttribute('id', `label${textcount}`);
+    labelbox.setAttribute('contenteditable', 'true');
     textbox.setAttribute('id', `text${textcount}`);
     textbox.setAttribute('placeholder', "Your Answer in Here...");
     f.appendChild(labelbox);
@@ -173,4 +174,18 @@ function checkEmpty() {
         }
     }
 }
+function saveMe() {
+    let put = document.getElementById('form_page').innerHTML;
+    const save = {}; 
+    save['mykey'] = put; 
+    console.log(save.mykey);    
+    window.localStorage.setItem('myObject', put);
+    console.log(localStorage.getItem('myObject'));
+}
+// function readMe() {    
+//     let show = document.getElementById('abox');
+//     let newObject = window.localStorage.getItem("myObject");
+//     // console.log(JSON.parse(newObject));
+//     abox.innerHTML = newObject;
+// }
 

@@ -4,14 +4,15 @@
     Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
 }
 body {
-  background: url("../images/formbg2.jpg");
+  /* background: url("../images/formbg2.jpg"); */
+  background-color: #4f6d7f;
     background-size: cover;
     background-repeat: no-repeat;
     height: auto;
 }
 header {
   width: 100%;
-  height: 80px;
+  height: 65px;
   background-color: var(--background);
   z-index: 1;
   top: 0;
@@ -70,7 +71,8 @@ header div {
   position: relative;
   padding-left: 7%;
   color: var(--nav);
-  font-weight: 300;
+  font-weight: 500;
+  font-size: 17px;
   letter-spacing: 3px;
   transition: 0.3s ease-in-out;
   text-transform: uppercase;
@@ -99,9 +101,12 @@ header div {
 #header-menu {
   flex-basis: 40%;
   width: 100%;
-  font-size: 1.2rem;
+  font-size: 16px;
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
     Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+}
+#header-menu ul {
+  justify-content: flex-end;
 }
 #header-menu a {
   padding-left: 15%;
@@ -112,7 +117,7 @@ header div {
   border-radius: 5px;
   color: var(--nav);
   padding: 5% 5px;
-  font-weight: 300;
+  font-weight: 500;
   letter-spacing: 3px;
   text-transform: uppercase;
 }
@@ -200,7 +205,7 @@ section div {
   flex-basis: 35%;
 }
 #set_output {
-  background-color: rgba(0, 0, 0, 0.298);
+  background-color: rgba(0, 0, 0, 0.507);
 }
 h2 {
   text-align: center;
@@ -214,7 +219,7 @@ input {
   height: 100%;
   margin: 1% 0%;
   border: none;
-  color: #1f777d;
+  color: rgb(221, 220, 220);
   font-weight: 500;
 }
 .choice {
@@ -389,9 +394,9 @@ input {
   overflow-y: scroll;
   max-height: 400px;
   padding: 2% 7%;
-  background-color: white;
+  background-color: transparent;
   border-radius: 4px;
-  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  /* box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px; */
 }
 #form_page form > * {
   display: block;
@@ -407,6 +412,7 @@ input {
 }
 #form_page form input {
   margin: 0% 0% 5% 0%;
+  background-color: whitesmoke;
 }
 #form_page fieldset {
   border: none;
@@ -425,6 +431,9 @@ input {
     width: 12%;
     height: 70%;
     padding-right: 5%;
+  }
+  #header-menu ul {
+    justify-content: flex-end;
   }
   #header-menu a {
     display: none;

@@ -29,7 +29,7 @@
                         <a href=""><li>Home</li></a>
                         <a href="Resources/html/form.html"><li>BUILD</li></a>
                         <a href="Resources/html/contact.html"><li>Contact</li></a>
-                        <a href="Resources/html/faq.html"><li>FAQ</li></a>
+                        <a href="Resources/html/formdisplay.html"><li>FAQ</li></a>
                     </ul>
                 </div>
                 <div id="header-menu">
@@ -114,8 +114,8 @@
                     <div id="option3" class="options example">
                         <label for="choicetype">Choice type: </label>  
                         <select id="choicetype">
-                            <option value="radio" selected>Single value</option>
-                            <option value="checkbox">Multiple values</option>
+                            <option value="radio" selected>Multiple choice</option>
+                            <option value="checkbox">Checkbox</option>
                         </select>
 
                         <label for="legend_input">Label: </label>
@@ -135,7 +135,7 @@
                         Lorem ipsum dolor sit amet consectetur adipisicing elit. Quam molestias, eius facere at corporis voluptates voluptatibus nobis assumenda cupiditate sunt aperiam quae animi porro culpa fugiat cumque qui. Minima quae velit blanditiis aspernatur maxime animi totam, eum porro doloremque? Vero nobis aut ea. Dolore, molestiae?
                         <span class="usebuttons">
                             <button class="button-26" role="button" onclick="cancelText(); stopRepeat();">Cancel</button>
-                            <button class="button-26" role="button" onclick="cancelText(); stopRepeat();">Apply</button>
+                            <button class="button-26" role="button" onclick="cancelText(); stopRepeat(); readMe();">Apply</button>
                         </span>
                     </div>
                 </div>
@@ -155,14 +155,14 @@
                     </div>
                     <div id="abox" class="choice">
                         <div>Something Else Here</div>
-                        <button class="button-26" role="button" onclick="choice('4')">Add +</button>
+                        <button class="button-26" role="button" onclick="choice('4'); saveMe();">Add +</button>
                     </div>
                 </div>
             </div>
-            <div id="form_page" class="example">
-                <h2 id="formtitle">Title of your form</h2>
-                <p id="formdescription">
-                    Leave a description for the users.
+            <div id="form_page" class="example" >
+                <h2 id="formtitle" contenteditable="true">Title of your form</h2>
+                <p id="formdescription" contenteditable="true">
+                    Your questions will be displayed below.
                 </p>
                 <form action="" id="mainform" class="example">
 

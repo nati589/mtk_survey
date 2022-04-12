@@ -8,7 +8,7 @@ body {
 
 header {
   width: 100%;
-  height: 80px;
+  height: 65px;
   background-color: var(--background);
   position: fixed;
   z-index: 1;
@@ -66,6 +66,9 @@ header a {
   width: 12%;
   height: 70%;
   padding-right: 5%;
+}
+#header-menu ul {
+  justify-content: flex-end;
 }
 #header-menu a {
   display: none;
@@ -139,7 +142,7 @@ header a {
   margin: 2%;
   color: white;
   background-color: rgb(223, 102, 37);
-  font-size: 1.5rem;
+  font-size: 1.7rem;
   font-weight: 400;
   letter-spacing: 2px;
 }
@@ -203,13 +206,11 @@ header a {
     align-items: center;
     justify-content: center;
     flex-wrap: wrap;
-    background-color: rgba(0, 0, 0, 0.154); #
+    background-color: rgba(0, 0, 0, 0.154); 
     /* box-shadow: rgba(255, 255, 255, 0.724) 0px 5px 15px; */
     border-radius: 15px;
     /* border: 2px solid white; */
     transition: 2s all ease-in-out;
-
-
   }
   #t1 {
     display: block;
@@ -406,7 +407,7 @@ footer li {
   .inner-heading #header-nav {
     flex-basis: 60%;
     width: 100%;
-    font-size: 1.25rem;
+    font-size: 17px;
     font-family: var(--font-secondary);
     padding: 0% 0% 0% 10%;
   }
@@ -414,7 +415,7 @@ footer li {
     position: relative;
     padding-left: 7%;
     color: var(--nav);
-    font-weight: 300;
+    font-weight: 400;
     letter-spacing: 3px;
     transition: 0.3s ease-in-out;
     text-transform: uppercase;
@@ -454,7 +455,8 @@ footer li {
   #header-menu {
     flex-basis: 30%;
     width: 100%;
-    font-size: 1.2rem;
+    font-size: 16px;
+    /* font-weight: 800; */
     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
       Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
   }
@@ -467,7 +469,7 @@ footer li {
     border-radius: 5px;
     color: var(--nav);
     padding: 5% 5px;
-    font-weight: 300;
+    font-weight: 500;
     letter-spacing: 3px;
     text-transform: uppercase;
   }
@@ -536,15 +538,15 @@ footer li {
     /* border: 3px solid var(--orange-color); */
     border-radius: 5px;
     border: var(--orange-color);
-    padding: 0.3% 1.5% 0.5% 1.5%;
+    padding: 0.5% 1%;
     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
       Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
     margin: 2%;
     color: white;
     background-color: rgb(223, 102, 37);
-    font-size: 1.5rem;
+    font-size: 1.7rem;
     font-weight: 400;
-    letter-spacing: 2px;
+    letter-spacing: 3px;
     /* font-family: var(--font-main); */
   }
   #herosection button:hover {

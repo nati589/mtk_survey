@@ -42,7 +42,7 @@ main {
 }
 header {
   width: 100%;
-  height: 80px;
+  height: 65px;
   background-color: var(--background);
   /* position: fixed; */
   z-index: 1;
@@ -61,6 +61,7 @@ header div {
   transition: all 1000ms;
   /* transition: background-color 1000ms; */
 }
+
 .header-container {
   width: 100%;
 }
@@ -98,7 +99,7 @@ header div {
 .inner-heading #header-nav {
   flex-basis: 60%;
   width: 100%;
-  font-size: 1.25rem;
+  font-size: 17px;
   font-family: var(--font-secondary);
   padding: 0% 0% 0% 10%;
 }
@@ -106,7 +107,7 @@ header div {
   position: relative;
   padding-left: 7%;
   color: var(--nav);
-  font-weight: 300;
+  font-weight: 500;
   letter-spacing: 3px;
   transition: 0.3s ease-in-out;
   text-transform: uppercase;
@@ -135,9 +136,12 @@ header div {
 #header-menu {
   flex-basis: 40%;
   width: 100%;
-  font-size: 1.2rem;
+  font-size: 16px;
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
     Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+}
+#header-menu ul {
+  justify-content: flex-end;
 }
 #header-menu a {
   padding-left: 15%;
@@ -149,7 +153,7 @@ header div {
   color: var(--nav);
   padding: 5% 5px;
 
-  font-weight: 300;
+  font-weight: 500;
   letter-spacing: 3px;
   text-transform: uppercase;
 }
@@ -372,6 +376,9 @@ footer div {
     width: 12%;
     height: 70%;
     padding-right: 5%;
+  }
+  #header-menu ul {
+    justify-content: flex-end;
   }
   #header-menu a {
     display: none;
