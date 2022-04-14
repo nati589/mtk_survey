@@ -242,6 +242,11 @@ input {
   width: 100%;
   padding-top: 80px;
   background-color: black;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1;
   /* transition: 0.3s all ease-in-out; */
 }
 #asideinfo {
