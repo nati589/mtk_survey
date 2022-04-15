@@ -4,10 +4,7 @@
     Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
 }
 body {
-  /* background: url("../images/formbg2.jpg"); */
-  background-color: #4f6d7f;
-    background-size: cover;
-    background-repeat: no-repeat;
+  /* background-color: #4f6d7f; */
     height: auto;
 }
 header {
@@ -69,7 +66,7 @@ header div {
 }
 #header-nav a {
   position: relative;
-  padding-left: 7%;
+  margin-left: 7%;
   color: var(--nav);
   font-weight: 500;
   font-size: 17px;
@@ -109,7 +106,7 @@ header div {
   justify-content: flex-end;
 }
 #header-menu a {
-  padding-left: 15%;
+  margin-left: 5%;
   display: block;
 }
 #header-menu a li {
@@ -183,16 +180,24 @@ body header h2 {
 }
 main {
   height: 100%;
+  background: linear-gradient(
+    180deg,
+    rgba(0, 0, 0, 0.5) 0%,
+    rgba(0, 0, 0, 0.5) 100%
+  ), url("../images/buildpic.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
 }
 h1 {
   text-align: center;
   color: var(--orange-color);
-  background-color: rgba(0, 0, 0, 0.771);
+  /* background-color: rgba(0, 0, 0, 0.771); */
   padding-top: 15px;
   padding-bottom: 15px;
   margin-bottom: 5px;
-  font-size: 2rem;
+  font-size: 3rem;
 }
+
 section {
   display: flex;
   width: 100%;
@@ -205,7 +210,7 @@ section div {
   flex-basis: 35%;
 }
 #set_output {
-  background-color: rgba(0, 0, 0, 0.507);
+  background-color: rgba(0, 0, 0, 0.608);
 }
 h2 {
   text-align: center;

@@ -1,4 +1,5 @@
 let testcounter = 1;
+document.getElementById('testimony_container').addEventListener('click', nextTestimony);
 
 const headersection = document.querySelector('header');
 const sectionOne = document.querySelector('section#herosection');
@@ -28,28 +29,26 @@ function hamBurger() {
       x.style.display = "block";
     }
   } 
-  function prevTestimony() {
-    testcounter--;
-    if (testcounter < 1) {
-      testcounter = 4;
-    }
+
+function changeTestimony(change) {
     for (let c = 1; c < 5; c++) {
       let remove = document.getElementById(`t${c}`);
       remove.style.display = "none";
+      let removebtn = document.getElementById(`changebtn${c}`);
+      removebtn.classList.remove('selectbtn');
     }
-    let previous = document.getElementById(`t${testcounter}`);
+    let previous = document.getElementById(`t${change}`);
     previous.style.display = "block";
-  }
-
+    let addbtn = document.getElementById(`changebtn${change}`);
+    addbtn.classList.add('selectbtn');
+    testcounter = change;
+}
 function nextTestimony() {
-  testcounter++;
-  if (testcounter > 4) {
+  if (testcounter == 4) {
     testcounter = 1;
   }
-  for (let c = 1; c < 5; c++) {
-    let remove = document.getElementById(`t${c}`);
-    remove.style.display = "none";
+  else {
+    testcounter++;
   }
-  let next = document.getElementById(`t${testcounter}`);
-  next.style.display = "block";
+  changeTestimony(testcounter);
 }
