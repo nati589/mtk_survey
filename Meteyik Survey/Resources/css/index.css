@@ -285,14 +285,8 @@ header a {
   width: auto;
 } */
 #benefits {
-  /* background-color: white; */
   color: black;
-  padding: 1% 20%;
-  /* display: flex; */
-  /* align-items: center;
-  justify-content: center; */
-  /* flex-wrap: wrap; */
-
+  padding: 1% 10%;
 }
 #benefits #benefits_container {
   /* width: 40%; */
@@ -302,6 +296,7 @@ header a {
   justify-content: center;
   flex-wrap: wrap;
 }
+
 #benefits .benefit {
   /* display: flex; */
   /* justify-content: space-around;  */
@@ -644,8 +639,13 @@ footer li {
     background-color: rgba(255, 89, 0, 0.863);
   }
 
+  #benefits {
+    color: black;
+    padding: 1% 20%;
+  }
+
   #benefits .benefit {
-    flex-basis: 40%;
+    flex-basis: 30%;
   }
 
   #accounts {
