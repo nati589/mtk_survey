@@ -102,6 +102,19 @@ input {
   outline: none;
   text-align: left;
 }
+select {
+  width: 100px;
+  background-color: transparent;
+  /* border: none; */
+  border: 2px solid var(--lighter-primary-color);
+  color: var(--lighter-primary-color);
+  padding-left: 20px;
+  /* margin-left: 20px; */
+  margin: 10px;
+}
+option {
+  width: 100px;
+}
 #showpassword {
   width: auto;
   height: auto;
