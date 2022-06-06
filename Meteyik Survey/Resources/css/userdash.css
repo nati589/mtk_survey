@@ -100,6 +100,7 @@
 .main-content {
     transition: margin-left 300ms;
     margin-left: 345px;
+    /* padding-left: 100px; */
 }
 
 header {
@@ -212,7 +213,7 @@ main {
     margin-top: 3.5rem;
     display: grid;
     grid-gap: 2rem;
-    grid-template-columns: 65% auto;
+    grid-template-columns: 95% auto;
 }
 
 .card {

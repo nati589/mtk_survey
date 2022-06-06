@@ -6,15 +6,16 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="author" content="Natan Mekebib">
     <meta name="description" content="Fill out surveys get rewards">
-    <meta name="keywords" content="Survey Form Research meteyik mtk Rewards user signup">
+    <meta name="keywords" content="Survey Form Research meteyik mtk Rewards organization signup">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>User Account : Sign Up</title>
+    <title>Organization account: Sign Up</title>
     <link rel="shortcut icon" href="Resources/logo.png">
     <link href='https://fonts.googleapis.com/css?family=Bree Serif' rel='stylesheet'>
     <link rel="stylesheet" href="../css/style.css">
     <link rel="stylesheet" href="../css/signup.css">
     <script src="../js/signup.js"></script>
     <base href="../../index.php" target="_self">
+
 </head>
 
 <body>
@@ -22,15 +23,13 @@
         <div id="container">
             <div id="right-card" class="card">
                 <div>
-                    <h1>User Account Sign Up</h1>
-                    <p>Welcome to our community fellow surveyee! </p>
+                    <h1>Organization Account Sign Up</h1>
+                    <p>We provide a platform for all your data needs</p>
                 </div>
                 <div>
-                    <form method="POST" action="Resources/php/auth.php">
-                        <label for="firstname">First Name</label> <br>
-                        <input type="textarea" name="firstname" id="firstname" class="textbox" placeholder=" First Name" required> <br>
-                        <label for="lastname">Last Name</label> <br>
-                        <input type="textarea" name="lastname" id="lastname" class="textbox" placeholder=" Last Name" required> <br>
+                    <form method="POST" action="Resources/php/org_auth.php">
+                        <label for="companyname">Company Name</label> <br>
+                        <input type="textarea" name="companyname" id="companyname" class="textbox" placeholder=" Company Name" required> <br>
                         <label for="email">E-mail</label>
                         <div class="btn">
                             <input type="email" name="email" id="email" class="textbox" placeholder=" username@domain.com" required> <br>
@@ -51,8 +50,8 @@
                     </form>
                     <p>
                         Click here for
-                        <a href="Resources/html/orgsignup.php">
-                            Organization account
+                        <a href="Resources/html/usersignup.php">
+                            User account
                         </a>
                     </p>
                     <p>
@@ -60,7 +59,6 @@
                         <a href="Resources/html/login.php">
                             Login
                         </a>
-
                         <br>
                         <a href="Resources/html/orglogin.php">
                             Organization Account Log in

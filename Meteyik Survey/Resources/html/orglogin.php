@@ -1,3 +1,11 @@
+<?php
+session_start();
+if (isset($_SESSION['role'])) {
+    echo $_SESSION['role'];
+    header("location: ../../Resources/html/admindash.php");
+}
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -8,13 +16,15 @@
     <meta name="description" content="Fill out surveys get rewards">
     <meta name="keywords" content="Survey Form Research meteyik mtk Rewards user signup">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>User Account : Sign Up</title>
+    <title>User Account : Login</title>
     <link rel="shortcut icon" href="Resources/logo.png">
     <link href='https://fonts.googleapis.com/css?family=Bree Serif' rel='stylesheet'>
     <link rel="stylesheet" href="../css/style.css">
     <link rel="stylesheet" href="../css/signup.css">
+    <link rel="stylesheet" href="../css/login.css">
     <script src="../js/signup.js"></script>
     <base href="../../index.php" target="_self">
+
 </head>
 
 <body>
@@ -22,45 +32,34 @@
         <div id="container">
             <div id="right-card" class="card">
                 <div>
-                    <h1>User Account Sign Up</h1>
-                    <p>Welcome to our community fellow surveyee! </p>
+                    <h1>Organizational Login</h1>
+                    <p>Welcome back fellow surveyee! </p>
                 </div>
                 <div>
-                    <form method="POST" action="Resources/php/auth.php">
-                        <label for="firstname">First Name</label> <br>
-                        <input type="textarea" name="firstname" id="firstname" class="textbox" placeholder=" First Name" required> <br>
-                        <label for="lastname">Last Name</label> <br>
-                        <input type="textarea" name="lastname" id="lastname" class="textbox" placeholder=" Last Name" required> <br>
+                    <form method="post" action="Resources/php/orglog.php">
                         <label for="email">E-mail</label>
                         <div class="btn">
-                            <input type="email" name="email" id="email" class="textbox" placeholder=" username@domain.com" required> <br>
+                            <input type="email" name="email" id="email" class="textbox" placeholder="username@domain.com" required> <br>
                         </div>
                         <label for="password">Password</label>
                         <div class="btn">
                             <input type="password" name="password" id="password" class="textbox" placeholder=" Password" required> <br>
                         </div>
-                        <label for="confirm">Confirm Password</label>
-                        <div class="btn">
-                            <input type="password" name="password" id="confirm" class="textbox" placeholder=" Confirm Password" required> <br>
-                        </div>
                         <input type="checkbox" onclick="toggle()" id="showpassword"> Show Password
                         <div>
-                            <input type="submit" name="signup" value="Sign Up" class="btn">
+                            <input type="submit" name="login" value="Login" class="btn">
 
                         </div>
                     </form>
                     <p>
-                        Click here for
+                        Don't have an account? Sign Up
+                        <a href="Resources/html/usersignup.php">
+                            User Account
+                        </a>
+                        <br>
                         <a href="Resources/html/orgsignup.php">
-                            Organization account
+                            Organization Account
                         </a>
-                    </p>
-                    <p>
-                        Already have an account?
-                        <a href="Resources/html/login.php">
-                            Login
-                        </a>
-
                         <br>
                         <a href="Resources/html/orglogin.php">
                             Organization Account Log in

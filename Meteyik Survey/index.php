@@ -28,23 +28,23 @@
                         <a href="">
                             <li>Home</li>
                         </a>
-                        <a href="Resources/html/pricing.html">
+                        <a href="Resources/html/pricing.php">
                             <li>Pricing</li>
                         </a>
-                        <a href="Resources/html/contact.html">
+                        <a href="Resources/html/contact.php">
                             <li>Contact</li>
                         </a>
-                        <a href="Resources/html/faq.html">
+                        <a href="Resources/html/faq.php">
                             <li>FAQ</li>
                         </a>
                     </ul>
                 </div>
                 <div id="header-menu">
                     <ul>
-                        <a href="Resources/html/login.html">
+                        <a href="Resources/html/login.php">
                             <li>Login</li>
                         </a>
-                        <a href="Resources/html/usersignup.html">
+                        <a href="Resources/html/usersignup.php">
                             <li>Sign Up</li>
                         </a>
                         <button onclick="hamBurger()">
@@ -62,23 +62,23 @@
                     <a href="">Home</a>
                 </li>
                 <li>
-                    <a href="Resources/html/pricing.html">Pricing</a>
+                    <a href="Resources/html/pricing.php">Pricing</a>
                 </li>
                 <li>
-                    <a href="Resources/html/contact.html">Contact</a>
+                    <a href="Resources/html/contact.php">Contact</a>
                 </li>
                 <li>
-                    <a href="Resources/html/faq.html">FAQ</a>
+                    <a href="Resources/html/faq.php">FAQ</a>
                 </li>
             </ul>
         </div>
         <div id="signin">
             <ul>
                 <li>
-                    <a href="Resources/html/login.html">Login</a>
+                    <a href="Resources/html/login.php">Login</a>
                 </li>
                 <li>
-                    <a href="Resources/html/usersignup.html">Sign Up</a>
+                    <a href="Resources/html/usersignup.php">Sign Up</a>
                 </li>
             </ul>
         </div>
@@ -177,12 +177,12 @@
                 <h2>Start your journey with us now by signing up</h2>
             </div>
             <div id="account">
-                <a name="accounts" href="Resources/html/usersignup.html">
+                <a name="accounts" href="Resources/html/usersignup.php">
                     <div class="button">
                         Individual Account
                     </div>
                 </a>
-                <a href="Resources/html/orgsignup.html">
+                <a href="Resources/html/orgsignup.php">
                     <div class="button">
                         Organization Account
                     </div>
@@ -226,7 +226,7 @@
                     &copy; መጠይቅ Survey PLC 2022
                 </div>
                 <div id="foot-right">
-                    <a href="Resources/html/contact.html">Contact Us</a> |
+                    <a href="Resources/html/contact.php">Contact Us</a> |
                     <a href="#">Terms of Service</a> |
                     <a href="#">Privacy Policy</a>
                 </div>

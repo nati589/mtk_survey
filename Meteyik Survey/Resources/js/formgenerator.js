@@ -4,8 +4,9 @@ let radiocount = 0;
 let checkcount = 0;
 let fieldcount = 0;
 let choicecount = 0;
-let count = 0;
+let count = 1;
 let repeatcheck = false;
+let questions = {};
 
 
 function genText() {
@@ -16,6 +17,7 @@ function genText() {
     labelbox.setAttribute('id', `label${textcount}`);
     labelbox.setAttribute('contenteditable', 'true');
     textbox.setAttribute('id', `text${textcount}`);
+    textbox.setAttribute('name', `text${textcount}`);
     textbox.setAttribute('placeholder', "Your Answer in Here...");
     f.appendChild(labelbox);
     f.appendChild(textbox);
@@ -30,12 +32,10 @@ function cancelText() {
    }
 }
 function textChange() {
-    let form = document.getElementById('mainform');
-
     let label = document.getElementById(`label${textcount}`);
     let labelchange = document.getElementById('label_input'); 
     if (labelchange.value == ""){
-        form.removeChild(label);
+        label.innerHTML = "Your answer below: ";
     }else {
         label.innerHTML = labelchange.value;
     }
@@ -59,7 +59,8 @@ function textChange() {
         reqinput.setAttribute('required', '');
     }
     required.value = "required";
-
+    saveQuestion(1);
+    count++;
     textcount++;
 }
 function formHeader() {
@@ -119,7 +120,12 @@ function choiceOptions() {
     choicelabel.setAttribute('id', `field${fieldcount}label${choicecount}`);
 
     let choiceChange = document.getElementById('options_input');
-    choicelabel.innerHTML = choiceChange.value;
+    if (choiceChange.value == "") {
+        choicelabel.innerHTML = `Option ${choicecount + 1}`;
+    }
+    else {
+        choicelabel.innerHTML = choiceChange.value;
+    }
     choiceChange.value = "";
 
     span.appendChild(choice);
@@ -136,7 +142,6 @@ function removeChoice() {
         choicecount = 0;
     }
 }
-
 function applyChoice() {
     let legend = document.getElementById(`legend${fieldcount}`);
     let legendChange = document.getElementById('legend_input');
@@ -152,19 +157,29 @@ function applyChoice() {
     for (let i = 0; i < choicecount; i++) {
         let choice = document.getElementById(`field${fieldcount}input${i}`);
         choice.setAttribute('type', `${typevalue}`);
+        if (typevalue == "checkbox"){
+            choice.setAttribute('name', `field${fieldcount}[]`);
+        }
+
     }
     choicetype.value = "radio";
+    if (typevalue == "radio") {
+        saveQuestion(2);
+    }
+    else {
+        saveQuestion(3);
+    }
     choicecount = 0;
+    count++;
+    
     fieldcount++;
-
 }
-
 function cancelChoice() {
     let form = document.getElementById('mainform');
     let field = document.getElementById(`field${fieldcount}`);
     form.removeChild(field);
+    choicecount = 0;
 }
-
 function checkEmpty() {
     for (let c = 1; c < 5; c++) {
         let remove = document.getElementById(`option${c}`);
@@ -174,13 +189,113 @@ function checkEmpty() {
         }
     }
 }
+function makebtn() {
+    let getForm = document.getElementById('mainform');
+    let btn = document.createElement('input');
+    btn.setAttribute('type','submit');
+    btn.setAttribute('value', 'Submit');
+    btn.setAttribute('id','formbtn');
+    // btn.classList.add('button-26');
+    getForm.appendChild(btn);
+    let s_content = document.getElementById('s_content');
+    let put = document.getElementById('form_page').innerHTML;
+    s_content.value = put;
+    saveMe();
+}
+function putData() {
+    let s_name = document.getElementById('s_name');
+    let s_desc = document.getElementById('s_desc');
+    let s_age = document.getElementById('s_age');
+    let s_gender = document.getElementById('s_gender');
+    let s_occup = document.getElementById('s_occup');
+    let s_content = document.getElementById('s_content');
+    let s_questions = document.getElementById('s_questions');
+    let put = document.getElementById('form_page').innerHTML;
+    let name = document.getElementById('formtitle');
+    let desc = document.getElementById('formdescription');
+    let age = document.getElementById('age');
+    let agevalue = age.options[age.selectedIndex].value;
+    let gender = document.getElementById('gender');
+    let gendervalue = gender.options[gender.selectedIndex].value;
+    let occup = document.getElementById('occupation');
+    let occupvalue = occup.options[occup.selectedIndex].value;
+
+    s_name.value = name.textContent;
+    s_desc.value = desc.textContent;
+    s_age.value = agevalue;
+    s_gender.value = gendervalue;
+    s_occup.value = occupvalue;
+    s_content.value = put;
+    // let x = {
+    //     saveQ : questions
+    // }
+    s_questions.value = JSON.stringify(questions);
+    // console.log(questions);
+    console.log(s_questions.value);
+    // console.log(questions);
+    // console.log(s_questions);
+}
 function saveMe() {
     let put = document.getElementById('form_page').innerHTML;
     const save = {}; 
     save['mykey'] = put; 
-    console.log(save.mykey);    
-    window.localStorage.setItem('myObject', put);
-    console.log(localStorage.getItem('myObject'));
+    // console.log(save.mykey);    
+    // window.localStorage.setItem('myObject', put);
+    // console.log(localStorage.getItem('myObject'));
+}
+function saveQuestion(type) {
+    //Vector Defined
+     // Adding items to the vector
+    let question = {
+        q_number: "",
+        q_content: "",
+        q_type: "",
+        answer: "",
+        options: []
+    };
+    if (type == 1) {
+        question['q_number'] = count;
+        question['q_content'] = document.getElementById(`label${textcount}`).textContent;
+        question['q_id'] = `text${textcount}`;
+        question['q_type'] = "1";
+        delete question.options;
+        questions[`text${textcount}`] = question;
+    }
+    else {
+        question['q_number'] = count;
+        question['q_content'] = document.getElementById(`legend${fieldcount}`).textContent;
+        question['q_id'] = `field${fieldcount}`;
+        delete question.answer;
+        for (let i = 0; i < choicecount; i++){
+            let choice = {
+                number: "",
+                c_id: "",
+                content: "",
+                selected: "0"
+            };
+            question.options.push(choice);
+        }
+        for (let i = 0; i < choicecount; i++){
+            // choice['number'] = `${i + 1}`;
+            question.options[i].number = `${i}`;
+            question.options[i].content = document.getElementById(`field${fieldcount}label${i}`).innerHTML;
+            // console.log(question.options[i].content); 
+        } 
+        // console.log(choice.content); 
+
+        if (type == 2) {
+            question['q_type'] = "2";
+        }
+        else {
+            question['q_type'] = "3";
+        }
+        questions[`field${fieldcount}`] = question;
+        console.log(questions);
+    }
+}
+function removebtn() {
+    let getForm = document.getElementById('mainform');
+    getForm.removeChild(getForm.lastChild);
 }
 // function readMe() {    
 //     let show = document.getElementById('abox');
@@ -188,4 +303,3 @@ function saveMe() {
 //     // console.log(JSON.parse(newObject));
 //     abox.innerHTML = newObject;
 // }
-
