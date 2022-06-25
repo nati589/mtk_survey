@@ -452,6 +452,15 @@ input {
 #hidepost {
   display: none;
 }
+.center {
+  margin-left: 40%;
+  border: none;
+  background-color: transparent !important;
+  color: white;
+  font-size: larger;
+  margin-right: 20px;
+  text-decoration: none;
+}
 
 @media screen and (max-width: 900px) {
   /* Header */

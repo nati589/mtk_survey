@@ -37,12 +37,19 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             <div class="message error">Email already in use</div>
             <?php
         } else {
-
-            $sql = "INSERT INTO user(first_name, last_name, email, password) VALUES ('" . $fname . "', '" . $lname . "', '" . $email . "', '" . $password . "')";
+            if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
+                // $emailErr = "Invalid email format";
+                header("Location: ../html/usersignup.php?logincheck=1");
+            }
+            $sql = "INSERT INTO user(u_firstname, u_lastname, u_email, u_password, u_age, u_occupation, u_gender, u_profit,taken_survey) VALUES ('" . $fname . "', '" . $lname . "', '" . $email . "', '" . $password . "', '', '','', '0', '0')";
             if ($conn->query($sql) === TRUE) {
+                if (isset($_POST['deleting'])) {
+                    header("Location: ../html/admin.php?table=" . $_POST['deleting'] . "");
+                }
+                header("Location: ../html/login.php");
 
             ?>
-                <div class="message success">Account created</div>
+                <!-- <div class="message success">Account created</div> -->
 <?php
 
             } else {
@@ -54,9 +61,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 }
 
 if (isset(($_POST["email"])) && isset($_POST["delete"])) {
+
     $email = setup_input($_POST["email"]);
-    deletetable('user', $email);
-    header("Location: ../html/admindash.php?table=user");
+
+    deleteutable('user', $email);
+    header("Location: ../html/admin.php");
 }
 
 

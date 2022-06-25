@@ -1,0 +1,16 @@
+:root {
+    --main-color: #17043b !important;
+    --color-dark: #1d2231;
+    --text-grey: #8390A2;
+
+}
+
+main {
+    margin-top: 20px !important;
+}
+.recent-grid {
+    display: block !important;
+}
+.projects {
+    width: 95% !important;
+}

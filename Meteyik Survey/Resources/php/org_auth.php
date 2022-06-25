@@ -37,16 +37,23 @@ if (isset($_POST["companyname"]) && isset($_POST["email"]) && isset($_POST["pass
         <div class="message error">Email already in use</div>
         <?php
     } else {
-
-        $sql = "INSERT INTO org(org_name, email, password) VALUES ('" . $cname . "', '" . $email . "', '" . $password . "')";
+        if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
+            // $emailErr = "Invalid email format";
+            header("Location: ../html/orgsignup.php?logincheck=1");
+        }
+        $sql = "INSERT INTO orgs(o_name, o_email, o_password, o_surveys, o_payment, review_number) VALUES ('" . $cname . "', '" . $email . "', '" . $password . "', '0', '0', '0')";
         if ($conn->query($sql) === TRUE) {
+            if (isset($_POST['deleting'])) {
+                header("Location: ../html/admin.php?table=" . $_POST['deleting'] . "");
+            }
+            header("Location: ../html/login.php");
 
         ?>
             <div class="message success">Organization account created</div>
 <?php
 
         } else {
-
+            header("Location: ../html/orgsignup.php?logincheck=1");
             echo " Account not created";
             echo "Error: " . $sql . "<br>" . $conn->error;
         }
@@ -57,8 +64,8 @@ if (isset($_POST["companyname"]) && isset($_POST["email"]) && isset($_POST["pass
 
 if (isset(($_POST["email"])) && isset($_POST["delete"])) {
     $email = setup_input($_POST["email"]);
-    deletetable('org', $email);
-    header("Location: ../html/admindash.php?table=org");
+    deleteotable('orgs', $email);
+    header("Location: ../html/admin.php?table=org");
 }
 
 

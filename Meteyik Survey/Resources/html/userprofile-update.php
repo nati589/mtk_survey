@@ -79,6 +79,9 @@ if (isset($_POST['update_profile'])) {
 if (!isset($_SESSION['role'])) {
     header("location: ../../Resources/html/login.php");
 }
+if ($_SESSION['role'] != "user") {
+    header("location: ../../Resources/html/login.php");
+}
 
 ?>
 

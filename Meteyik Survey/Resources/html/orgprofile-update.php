@@ -63,6 +63,9 @@ if (isset($_POST['update_profile'])) {
 if (!isset($_SESSION['role'])) {
     header("location: ../../Resources/html/login.php");
 }
+if ($_SESSION['role'] != "biguser") {
+    header("location: ../../Resources/html/orglogin.php");
+}
 
 ?>
 

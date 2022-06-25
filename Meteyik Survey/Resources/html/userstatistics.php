@@ -3,11 +3,19 @@ include_once '../php/db.inc.php';
 session_start();
 
 if (!isset($_SESSION['role'])) {
-    header("location: ../../Resources/html/redirect.php");
+    header("location: ../../Resources/html/orglogin.php");
+}
+if ($_SESSION['role'] != "biguser") {
+    header("location: ../../Resources/html/orglogin.php");
 }
 $s_id = $_SESSION['survey'];
-if (isset($_POST['userid'])) {
-    $_SESSION['u_id'] = $_POST['userid'];
+if (isset($_GET['uid'])) {
+    $_SESSION['u_id'] = $_GET['uid'];
+}
+if (isset($_POST['report'])) {
+    $qur = "UPDATE taken_surveys SET s_state='7' WHERE u_id='" . $_SESSION['u_id'] . "' AND s_id='$s_id'";
+    mysqli_query($conn, $qur);
+    header("location: ../../Resources/html/orgdash.php");
 }
 $sql = "SELECT * FROM taken_surveys WHERE s_id='$s_id' AND u_id='" . $_SESSION['u_id'] . "';";
 $result = mysqli_query($conn, $sql);
@@ -31,14 +39,12 @@ $userdata = json_decode(htmlspecialchars_decode($resultcheck[2]));
     <meta name="description" content="Fill out surveys get rewards">
     <meta name="author" content="Natan Mekebib">
     <link rel="stylesheet" href="../css/style.css">
-    <link rel="stylesheet" href="../css/formdisplay.css">
+    <link rel="stylesheet" href="../css/userstatistics.css">
     <!-- <script src="../js/formgenerator.js"></script> -->
     <script src="../js/index.js"></script>
     <!-- <script src="../js/formgenerator.js"></script> -->
     <script src="../js/formdisplay.js"></script>
-    <title><?php
-            echo $resultcheck[0];
-            ?></title>
+    <title>User Data</title>
 </head>
 
 <body>
@@ -78,6 +84,12 @@ $userdata = json_decode(htmlspecialchars_decode($resultcheck[2]));
                 <a href="showsurveys.php">Go Back</a>
             </div>
         </section>
+        <div class="report">
+            <form action="" method="POST">
+                <label for="">Report user for misconduct?</label> <br>
+                <input type='submit' name='report' value='Report'>
+            </form>
+        </div>
     </main>
 </body>
 

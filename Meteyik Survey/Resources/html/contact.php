@@ -33,14 +33,11 @@
                         <a href="">
                             <li>Home</li>
                         </a>
-                        <a href="Resources/html/form.php">
-                            <li>BUILD</li>
-                        </a>
                         <a href="Resources/html/contact.php">
                             <li>Contact</li>
                         </a>
-                        <a href="Resources/html/faq.php">
-                            <li>FAQ</li>
+                        <a href="Resources/html/pricing.php">
+                            <li>Pricing</li>
                         </a>
                     </ul>
                 </div>

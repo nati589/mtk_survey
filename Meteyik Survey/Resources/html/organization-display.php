@@ -29,24 +29,24 @@ include('../../Resources/php/db.inc.php');
 
     </tr>
     <?php
-    $org = displaytable('org');
+    $org = displaytable('orgs');
     if ($org->num_rows > 0) {
         $sn = 1;
         while ($data = $org->fetch_assoc()) {
     ?>
             <tr>
                 <td><?php echo $sn; ?> </td>
-                <td><?php echo $data['id']; ?> </td>
-                <td><?php echo $data['org_name']; ?> </td>
-                <td><?php echo $data['email']; ?> </td>
-                <td><?php echo $data['net_pay']; ?> </td>
-                <td><?php echo $data['password']; ?> </td>
-                <td><?php echo $data['survey_created']; ?> </td>
-                <td><?php echo $data['user_review']; ?> </td>
-                <td><?php echo $data['profile_photo']; ?> </td>
+                <td><?php echo $data['o_id']; ?> </td>
+                <td><?php echo $data['o_name']; ?> </td>
+                <td><?php echo $data['o_email']; ?> </td>
+                <td><?php echo $data['o_payment']; ?> </td>
+                <td><?php echo $data['o_password']; ?> </td>
+                <td><?php echo $data['o_surveys']; ?> </td>
+                <td><?php echo $data['review_number']; ?> </td>
+                <td><?php echo $data['o_profilephoto']; ?> </td>
                 <td>
                     <form method="POST" action="../../Resources/php/org_auth.php">
-                        <input type="hidden" name="email" value="<?php echo $data['email']; ?>" required>
+                        <input type="hidden" name="email" value="<?php echo $data['o_email']; ?>" required>
                         <input type="submit" name="delete" value="delete" class="btn">
                     </form>
                 </td>
@@ -84,6 +84,7 @@ include('../../Resources/php/db.inc.php');
     </div>
     <input type="checkbox" onclick="toggle()" id="showpassword"> Show Password
     <div>
+        <input type="hidden" name="deleting" id="delete" value="org">
         <input type="submit" name="signup" value="Sign Up" class="btn">
 
     </div>

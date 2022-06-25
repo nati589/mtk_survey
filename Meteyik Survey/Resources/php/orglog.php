@@ -5,7 +5,6 @@ require "validation.inc.php";
 
 session_start();
 if (isset($_SESSION['role'])) {
-    echo $_SESSION['role'];
     header("location: ../html/orgdash.php");
 }
 // isset($_POST["email"]) && isset($_POST["password"])
@@ -34,11 +33,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 header("location: ../html/orgdash.php");
             } else {
                 // echo "Incorrect password";
-                header("location: ../html/orglogin.php");
+                header("location: ../../Resources/html/login.php?logincheck=1");
             }
         } else {
-            echo "isset error";
-            header("location: ../html/orglogin.php");
+            header("location: ../../Resources/html/login.php?logincheck=1");
         }
     }
 }

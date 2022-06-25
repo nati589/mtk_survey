@@ -5,6 +5,9 @@ session_start();
 if (!isset($_SESSION['role'])) {
     header("location: ../../Resources/html/orglogin.php");
 }
+if ($_SESSION['role'] != "biguser") {
+    header("location: ../../Resources/html/orglogin.php");
+}
 $s_id = $_SESSION['survey'];
 $sql = "SELECT * FROM taken_surveys WHERE s_id='$s_id';";
 $result = mysqli_query($conn, $sql);

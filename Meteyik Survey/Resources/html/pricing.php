@@ -29,9 +29,6 @@
             <a href="contact.php">
               <li>Contact</li>
             </a>
-            <a href="faq.php">
-              <li>FAQ</li>
-            </a>
           </ul>
         </div>
         <div id="header-menu">
@@ -55,72 +52,49 @@
       <div class="price-header">
         <div class="price">
           <div class="dollar-sign">$</div>
-          10
+          0
           <div class="per-month">/mo</div>
         </div>
-        <div class="plan-name">Basic</div>
+        <div class="plan-name">User Account</div>
       </div>
       <div class="divider"></div>
       <div class="feature">
         <img src="../images/check-circle.svg">
-        Feature A
+        Unlimited Surveys
       </div>
       <div class="feature">
         <img src="../images/check-circle.svg">
-        Feature B
+        Withdraw anytime
       </div>
-      <div class="feature inactive">
-        <img src="../images/x-square.svg">
-        Feature C
+      <div class="feature">
+        <img src="../images/check-circle.svg">
+        No time limit
       </div>
-      <div class="feature inactive">
-        <img src="../images/x-square.svg">
-        Feature D
-      </div>
-      <div class="feature inactive">
-        <img src="../images/x-square.svg">
-        Feature E
-      </div>
-      <div class="feature inactive">
-        <img src="../images/x-square.svg">
-        Feature F
-      </div>
+
       <button class="cta">Start Today</button>
     </div>
     <div class="price-column popular">
-      <div class="most-popular">Most Popular</div>
+      <div class="most-popular"></div>
       <div class="price-header">
         <div class="price">
           <div class="dollar-sign">$</div>
-          20
-          <div class="per-month">/mo</div>
+          15
+          <div class="per-month">/survey</div>
         </div>
-        <div class="plan-name">Professional</div>
+        <div class="plan-name">Organization package</div>
       </div>
       <div class="divider"></div>
       <div class="feature">
         <img src="../images/check-circle.svg">
-        Feature A
+        View all surveys free
       </div>
       <div class="feature">
         <img src="../images/check-circle.svg">
-        Feature B
+        Unlimited Surveys
       </div>
       <div class="feature">
         <img src="../images/check-circle.svg">
-        Feature C
-      </div>
-      <div class="feature">
-        <img src="../images/check-circle.svg">
-        Feature D
-      </div>
-      <div class="feature inactive">
-        <img src="../images/x-square.svg">
-        Feature E
-      </div>
-      <div class="feature inactive">
-        <img src="../images/x-square.svg">
-        Feature F
+        Statistics
       </div>
       <button class="cta">Start Today</button>
     </div>
@@ -128,35 +102,23 @@
       <div class="price-header">
         <div class="price">
           <div class="dollar-sign">$</div>
-          50
-          <div class="per-month">/mo</div>
+          20
+          <div class="per-month">/survey</div>
         </div>
-        <div class="plan-name">Enterprise</div>
+        <div class="plan-name">Trial Organization Package</div>
       </div>
       <div class="divider"></div>
       <div class="feature">
         <img src="../images/check-circle.svg">
-        Feature A
+        View all surveys free
       </div>
       <div class="feature">
         <img src="../images/check-circle.svg">
-        Feature B
+        Unlimited Surveys
       </div>
-      <div class="feature">
-        <img src="../images/check-circle.svg">
-        Feature C
-      </div>
-      <div class="feature">
-        <img src="../images/check-circle.svg">
-        Feature D
-      </div>
-      <div class="feature">
-        <img src="../images/check-circle.svg">
-        Feature E
-      </div>
-      <div class="feature">
-        <img src="../images/check-circle.svg">
-        Feature F
+      <div class="feature inactive">
+        <img src="../images/x-square.svg">
+        Statistics
       </div>
       <button class="cta">Start Today</button>
     </div>

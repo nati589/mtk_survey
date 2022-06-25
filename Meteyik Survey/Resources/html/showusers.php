@@ -5,13 +5,17 @@ session_start();
 if (!isset($_SESSION['role'])) {
     header("location: ../../Resources/html/orglogin.php");
 }
+if ($_SESSION['role'] != "biguser") {
+    header("location: ../../Resources/html/orglogin.php");
+}
 $email = $_SESSION['email'];
-if (isset($_POST['survey'])) {
-    $_SESSION['survey'] = $_POST['survey'];
+if (isset($_GET['id'])) {
+    $_SESSION['survey'] = $_GET['id'];
 }
 $sql = "SELECT * FROM orgs WHERE o_email='$email';";
 $result = mysqli_query($conn, $sql);
 $resultcheck = mysqli_fetch_row($result);
+unset($_SESSION['u_id']);
 
 ?>
 
@@ -44,9 +48,6 @@ $resultcheck = mysqli_fetch_row($result);
                     <a href="orgdash.php"><span class="las la-igloo"></span><span>Dashboard</span></a>
                 </li>
                 <li>
-                    <a href=""><span class="las la-users"></span><span>Customers</span></a>
-                </li>
-                <li>
                     <a href="showsurveys.php"><span class="las la-clipboard-list"></span><span>Surveys</span></a>
                 </li>
                 <li>
@@ -74,11 +75,6 @@ $resultcheck = mysqli_fetch_row($result);
                 echo $nameresultcheck[0];
                 ?>
             </h2>
-
-            <div class="search-wrapper">
-                <span class="las la-search"></span>
-                <input type="search" placeholder="Search here" />
-            </div>
 
             <div class="user-wrapper">
                 <?php
@@ -216,10 +212,8 @@ $resultcheck = mysqli_fetch_row($result);
                                         $queryresultcheck = mysqli_num_rows($queryresult);
                                         if ($queryresultcheck > 0) {
                                             while ($row = mysqli_fetch_assoc($queryresult)) {
-                                                echo "<tr><form action='userstatistics.php' method='POST'> 
-                                                <input type='hidden' value='" . $row['u_id'] . "' name='userid'>
-                                                
-                                            <td> <input type='submit' name='submit' value='" . $row['u_firstname'] . " " . $row['u_lastname'] . "'></td>
+                                                echo "<tr>
+                                            <td><a href='userstatistics.php?uid=" . $row['u_id'] . "'>" . $row['u_firstname'] . " " . $row['u_lastname'] . "</a></td>
                                             <td>" . $row['u_occupation'] . "</td>
                                             <td></td>
                                         </form></tr>

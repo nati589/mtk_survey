@@ -100,7 +100,6 @@
 .main-content {
     transition: margin-left 300ms;
     margin-left: 345px;
-    /* padding-left: 100px; */
 }
 
 header {
@@ -210,10 +209,10 @@ main {
 }
 
 .recent-grid {
-    margin-top: 3.5rem;
+    margin-top: 1.5rem;
     display: grid;
     grid-gap: 2rem;
-    grid-template-columns: 95% auto;
+    /* grid-template-columns: 95% auto; */
 }
 
 .card {
@@ -341,6 +340,15 @@ table tbody tr td a:hover {
     color: rgba(153, 70, 25, 0.8) !important;
     /* font-size: 16px !important; */
     transform: scale(1.1);
+}
+
+select {
+    background-color: var(--main-color);
+    border-radius: 10px;
+    color: #fff;
+    font-size: .8rem;
+    padding: .5rem 1rem;
+    border: 1px solid var(--main-color);
 }
 
 @media only screen and (max-width: 1200px) {

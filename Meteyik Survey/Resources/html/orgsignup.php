@@ -48,6 +48,11 @@
 
                         </div>
                     </form>
+                    <?php
+                    if (isset($_GET['logincheck'])) {
+                        echo "<div class='error'>Invalid information entered</div>";
+                    }
+                    ?>
                     <p>
                         Click here for
                         <a href="Resources/html/usersignup.php">
@@ -60,9 +65,6 @@
                             Login
                         </a>
                         <br>
-                        <a href="Resources/html/orglogin.php">
-                            Organization Account Log in
-                        </a>
                     </p>
 
                 </div>

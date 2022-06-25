@@ -38,11 +38,24 @@
                             <input type="password" name="password" id="password" class="textbox" placeholder=" Password" required> <br>
                         </div>
                         <input type="checkbox" onclick="toggle()" id="showpassword"> Show Password
+                        <br>
+                        <div class="roles">
+
+                            <input type="radio" name="role" value="User" required>
+                            <label for="User">User</label> <br>
+                            <input type="radio" name="role" value="Organization" required>
+                            <label for="Organization">Orgs</label>
+                        </div>
                         <div>
                             <input type="submit" name="login" value="Login" class="btn">
 
                         </div>
                     </form>
+                    <?php
+                    if (isset($_GET['logincheck'])) {
+                        echo "<div class='error'>Invalid information entered</div>";
+                    }
+                    ?>
                     <p>
                         Don't have an account? Sign Up
                         <a href="Resources/html/usersignup.php">
@@ -53,9 +66,6 @@
                             Organization Account
                         </a>
                         <br>
-                        <a href="Resources/html/orglogin.php">
-                            Organization Account Log in
-                        </a>
                     </p>
 
                 </div>

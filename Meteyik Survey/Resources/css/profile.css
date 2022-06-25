@@ -7,7 +7,7 @@
    --dark-red:#c0392b;
    --black:#333;
    --white:#fff;
-   --light-bg:#002728;
+   --light-bg:rgba(198, 79, 15, 0.8);
    --box-shadow:0 5px 10px rgba(0,0,0,.1);
 }
 
@@ -17,18 +17,6 @@
    box-sizing: border-box;
    outline: none; border: none;
    text-decoration: none;
-}
-
-*::-webkit-scrollbar{
-   width: 10px;
-}
-
-*::-webkit-scrollbar-track{
-   background-color: transparent;
-}
-
-*::-webkit-scrollbar-thumb{
-   background-color: var(--blue);
 }
 
 

@@ -3,9 +3,12 @@ include_once '../php/db.inc.php';
 session_start();
 
 if (!isset($_SESSION['role'])) {
-    header("location: ../../Resources/html/redirect.php");
+    header("location: ../../Resources/html/login.php");
 }
-$id = mysqli_real_escape_string($conn, $_POST['survey']);
+if ($_SESSION['role'] != "user") {
+    header("location: ../../Resources/html/login.php");
+}
+$id = mysqli_real_escape_string($conn, $_GET['id']);
 $_SESSION['survey'] = $id;
 $sql = "SELECT * FROM survey WHERE s_id = '$id';";
 $result = mysqli_query($conn, $sql);

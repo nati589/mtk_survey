@@ -3,7 +3,10 @@
 session_start();
 
 if (!isset($_SESSION['role'])) {
-    header("location: ../../Resources/html/redirect.php");
+    header("location: ../../Resources/html/orglogin.php");
+}
+if ($_SESSION['role'] != "biguser") {
+    header("location: ../../Resources/html/orglogin.php");
 }
 ?>
 
@@ -190,6 +193,8 @@ if (!isset($_SESSION['role'])) {
                         <button class="button-26" role="button" onclick="choice('3');">Add +</button>
                     </div>
                     <div id="abox">
+                        <a class="center" href="Resources/html/orgdash.php">Go Back</a>
+
                         <button class="button-26" role="button" onclick="choice('4'); putData(); makebtn();">Save </button>
                     </div>
                 </div>
@@ -204,6 +209,7 @@ if (!isset($_SESSION['role'])) {
                 </form>
             </div>
         </section>
+
     </main>
 </body>
 

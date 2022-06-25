@@ -6,3 +6,18 @@
 body section {
   padding: 8% 0%;
 } 
+.roles {
+  display: inline !important;
+  margin: 0% !important;
+  padding: 0% !important;
+}
+.roles input{
+  width: 50px !important;
+  height: 15px;
+  display: inline !important;
+}
+.error {
+  color: red;
+  font-size: large;
+  margin-bottom: 2%;
+}

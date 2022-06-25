@@ -4,7 +4,7 @@
       Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
   }
   body {
-    background-color: rgba(198, 79, 15, 0.8);
+    background-color: #002728;
       height: auto;
   }
   header {
@@ -272,6 +272,27 @@ section a {
   text-decoration: none;
   font-size: 20px;
   color: white;
+}
+.report {
+  margin: 2% 35%;
+  background-color: rgb(96, 96, 96);
+  padding-left: 2%;
+}
+.report label {
+  color: white;
+  font-size: larger;
+}
+.report input {
+  background-color: transparent;
+  border: none;
+
+  color: red;
+  font-size: 25px;
+  margin: 2%;
+  padding: 0% 2%;
+}
+.report input:hover {
+  transform: scale(0.9);
 }
 @media screen and (max-width: 900px) {
     /* Header */

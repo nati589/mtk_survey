@@ -7,8 +7,8 @@ $database = "surveydb";
 
 $conn = new mysqli($servername, $username, $password, $database);
 
-if($conn -> connect_error) {
-    die("connection failed: " .$conn->connect_error);
+if ($conn->connect_error) {
+    die("connection failed: " . $conn->connect_error);
 }
 
 function isUsed($field, $value, $table)
@@ -22,16 +22,25 @@ function isUsed($field, $value, $table)
     return false;
 }
 
-function displaytable($table) {
+function displaytable($table)
+{
     global $conn;
     $query = "SELECT * FROM $table";
     $result = $conn->query($query);
     return $result;
 }
 
-function deletetable($table, $email) {
+function deleteutable($table, $email)
+{
     global $conn;
-    $query = "DELETE FROM $table WHERE email= '$email'";
+    $query = "DELETE FROM $table WHERE u_email= '$email'";
+    $result = $conn->query($query);
+    return $result;
+}
+function deleteotable($table, $email)
+{
+    global $conn;
+    $query = "DELETE FROM $table WHERE o_email= '$email'";
     $result = $conn->query($query);
     return $result;
 }

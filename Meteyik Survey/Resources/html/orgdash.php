@@ -5,6 +5,9 @@ session_start();
 if (!isset($_SESSION['role'])) {
     header("location: ../../Resources/html/orglogin.php");
 }
+if ($_SESSION['role'] != "biguser") {
+    header("location: ../../Resources/html/orglogin.php");
+}
 $email = $_SESSION['email'];
 $sql = "SELECT * FROM orgs WHERE o_email='$email';";
 $result = mysqli_query($conn, $sql);
@@ -49,9 +52,6 @@ mysqli_query($conn, $revsavequr);
                     <a href="" class="active"><span class="las la-igloo"></span><span>Dashboard</span></a>
                 </li>
                 <li>
-                    <a href=""><span class="las la-users"></span><span>Customers</span></a>
-                </li>
-                <li>
                     <a href="showsurveys.php"><span class="las la-clipboard-list"></span><span>Surveys</span></a>
                 </li>
                 <li>
@@ -72,7 +72,7 @@ mysqli_query($conn, $revsavequr);
                 <label for="nav-toggle">
                     <span class="las la-bars"></span>
                 </label>
-                Dashboard
+                Organization Dashboard
             </h2>
 
             <div class="user-wrapper">
@@ -137,7 +137,7 @@ mysqli_query($conn, $revsavequr);
                         <span>Payment</span>
                     </div>
                     <div>
-                        <span class="lab la-google-wallet"></span>
+                        <span class="las la-file-invoice-dollar"></span>
                     </div>
                 </div>
             </div>

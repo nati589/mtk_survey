@@ -1,0 +1,21 @@
+.bold {
+    font-style: italic;
+    font-size: larger;
+    color: rgb(159, 157, 157);
+}
+tbody tr td input {
+    border: 1px solid black;
+    padding: 0% 2%;
+    border-radius: 5px;
+}
+#submit {
+    background-color: rgba(198, 79, 15, 0.8);
+    border-radius: 10px;
+    color: #fff;
+    font-size: .8rem;
+    padding: .5rem 1rem;
+    border: 1px solid rgba(198, 79, 15, 0.8);
+}
+.invalid {
+    color: red;
+}

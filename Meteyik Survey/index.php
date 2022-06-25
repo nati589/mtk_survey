@@ -34,9 +34,7 @@
                         <a href="Resources/html/contact.php">
                             <li>Contact</li>
                         </a>
-                        <a href="Resources/html/faq.php">
-                            <li>FAQ</li>
-                        </a>
+
                     </ul>
                 </div>
                 <div id="header-menu">
@@ -66,9 +64,6 @@
                 </li>
                 <li>
                     <a href="Resources/html/contact.php">Contact</a>
-                </li>
-                <li>
-                    <a href="Resources/html/faq.php">FAQ</a>
                 </li>
             </ul>
         </div>

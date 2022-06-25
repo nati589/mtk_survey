@@ -376,7 +376,8 @@ header a {
   padding: 10%;
   margin: 5% 0%;
   border-radius: 25px;
-  background-color: var(--lighter-orange-color);
+  color: black;
+  background-color: rgba(175, 174, 174, 0.751);
 }
 .button:active {
   background-color: white;
@@ -395,7 +396,7 @@ header a {
 /* Footer */
 footer {
   backdrop-filter: blur(15px);
-  background-color: #002728;
+  background-color: #17043b;
   text-decoration: none;
   color: white;
   /* font-weight: 400; */
@@ -520,7 +521,7 @@ footer li {
   #header-nav a li::after {
     content: "";
     position: absolute;
-    background-color: var(--primary-color);
+    background-color: white;
     height: 1.5px;
     width: 0;
     left: 0;
@@ -531,7 +532,7 @@ footer li {
     width: 100%;
   }
   #header-nav a:hover li {
-    color: var(--primary-color);
+    color: white;
   }
   /* #header-nav ul {
     width: 100%;
@@ -580,7 +581,7 @@ footer li {
     color: white;
   }
   #header-menu a:nth-child(2) li:hover {
-    color: var(--primary-color);
+    color: rgb(42, 129, 141);
     background-color: transparent;
     transition: 0.5s ease-in-out;
   }
@@ -658,14 +659,15 @@ footer li {
   #accounts {
     /* position: relative; */
     text-align: center;
-    background-image: url("../images/calltoaction.jpg");
+    background-image: url("../images/call.jpg");
     background-size: cover;
     background-repeat: no-repeat;
     overflow: hidden;
   }
   #accounts h2 {
     padding: 5% 0%;
-    font-size: 3rem;
+    font-size: 3rem; 
+    color: white;
   }
   #account {
     display: flex;
@@ -687,8 +689,8 @@ footer li {
     /* position: absolute; */
   }
   .button:hover {
-    color: var(--lighter-bgshade-color);
-    background-color: var(--orange-color);
+    color: black;
+    background-color: rgba(188, 188, 188, 0.785);
   }
   .foot-top {
     padding: 0.5%;

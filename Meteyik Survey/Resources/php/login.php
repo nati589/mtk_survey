@@ -18,23 +18,42 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
             $email = setup_input($_POST["email"]);
             $password = md5(setup_input($_POST["password"]));
+            if (isset($_POST['role']) && ($_POST['role'] == 'User')) {
 
-            $sql = "SELECT u_email FROM user WHERE u_email = '" . $email . "' and u_password = '" . $password . "'";
-            $result = $conn->query($sql);
+                $sql = "SELECT u_email FROM user WHERE u_email = '" . $email . "' and u_password = '" . $password . "'";
+                $result = $conn->query($sql);
 
-            $result_count = $result->num_rows;
+                $result_count = $result->num_rows;
 
-            if ($result_count > 0) {
-                $_SESSION['role'] = "user";
-                // echo "Logged In";
-                $_SESSION['email'] = $_POST['email'];
-                header("location: ../../Resources/html/userdash.php");
+                if ($result_count > 0) {
+                    $_SESSION['role'] = "user";
+                    // echo "Logged In";
+                    $_SESSION['email'] = $_POST['email'];
+                    header("location: ../../Resources/html/userdash.php");
+                } else {
+                    // echo "Incorrect password";
+                    header("location: ../../Resources/html/login.php?logincheck=1");
+                }
+            } elseif (isset($_POST['role']) && ($_POST['role'] == 'Organization')) {
+                $sql = "SELECT o_email FROM orgs WHERE o_email = '" . $email . "' and o_password = '" . $password . "'";
+                $result = $conn->query($sql);
+
+                $result_count = $result->num_rows;
+
+                if ($result_count > 0) {
+                    $_SESSION['role'] = "biguser";
+                    // echo "Logged In";
+                    $_SESSION['email'] = $_POST['email'];
+                    header("location: ../html/orgdash.php");
+                } else {
+                    // echo "Incorrect password";
+                    header("location: ../../Resources/html/login.php?logincheck=1");
+                }
             } else {
-                echo "Incorrect password";
-                header("location: ../../Resources/html/login.php");
+                header("location: ../../Resources/html/login.php?logincheck=1");
             }
         } else {
-            echo "isset error";
+            header("location: ../../Resources/html/login.php?logincheck=1");
         }
     }
 }

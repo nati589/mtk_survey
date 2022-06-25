@@ -40,20 +40,20 @@ include('../../Resources/php/db.inc.php');
     ?>
             <tr>
                 <td><?php echo $sn; ?> </td>
-                <td><?php echo $data['last_name']; ?> </td>
-                <td><?php echo $data['first_name']; ?> </td>
-                <td><?php echo $data['id']; ?> </td>
-                <td><?php echo $data['age']; ?> </td>
-                <td><?php echo $data['gender']; ?> </td>
-                <td><?php echo $data['occupation']; ?> </td>
-                <td><?php echo $data['email']; ?> </td>
-                <td><?php echo $data['password']; ?> </td>
-                <td><?php echo $data['profit']; ?> </td>
-                <td><?php echo $data['surveystaken']; ?> </td>
-                <td><?php echo $data['profilephoto']; ?> </td>
+                <td><?php echo $data['u_lastname']; ?> </td>
+                <td><?php echo $data['u_firstname']; ?> </td>
+                <td><?php echo $data['u_id']; ?> </td>
+                <td><?php echo $data['u_age']; ?> </td>
+                <td><?php echo $data['u_gender']; ?> </td>
+                <td><?php echo $data['u_occupation']; ?> </td>
+                <td><?php echo $data['u_email']; ?> </td>
+                <td><?php echo $data['u_password']; ?> </td>
+                <td><?php echo $data['u_profit']; ?> </td>
+                <td><?php echo $data['taken_survey']; ?> </td>
+                <td><?php echo $data['u_profilephoto']; ?> </td>
                 <td>
                     <form method="POST" action="../../Resources/php/auth.php">
-                        <input type="hidden" name="email" value="<?php echo $data['email']; ?>" required>
+                        <input type="hidden" name="email" value="<?php echo $data['u_email']; ?>" required>
                         <input type="submit" name="delete" value="delete" class="btn">
                     </form>
                 </td>
@@ -97,6 +97,8 @@ include('../../Resources/php/db.inc.php');
         </div>
         <input type="checkbox" onclick="toggle()" id="showpassword"> Show Password
         <div>
+            <input type="hidden" name="deleting" id="delete" value=" ">
+
             <input type="submit" name="signup" value="Sign Up" class="btn">
 
         </div>

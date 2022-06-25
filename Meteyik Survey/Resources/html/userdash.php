@@ -5,6 +5,9 @@ session_start();
 if (!isset($_SESSION['role'])) {
     header("location: ../../Resources/html/login.php");
 }
+if ($_SESSION['role'] != "user") {
+    header("location: ../../Resources/html/login.php");
+}
 $email = $_SESSION['email'];
 $sql = "SELECT * FROM user WHERE u_email='$email';";
 $result = mysqli_query($conn, $sql);
@@ -35,19 +38,13 @@ $resultcheck = mysqli_fetch_row($result);
         <div class="sidebar-menu">
             <ul>
                 <li>
-                    <a href="" class="active"><span class="las la-igloo"></span><span>Dashboard</span></a>
+                    <a href="userdash.php" class="active"><span class="las la-igloo"></span><span>Dashboard</span></a>
                 </li>
                 <li>
-                    <a href=""><span class="las la-users"></span><span>Customers</span></a>
+                    <a href="showsurveysusers.php"><span class="las la-clipboard-list"></span><span>Surveys</span></a>
                 </li>
                 <li>
-                    <a href=""><span class="las la-clipboard-list"></span><span>Surveys</span></a>
-                </li>
-                <li>
-                    <a href=""><span class="las la-shopping-bag"></span><span>Collect Payment</span></a>
-                </li>
-                <li>
-                    <a href=""><span class="las la-receipt"></span><span>Inventory</span></a>
+                    <a href="payment.php"><span class="las la-shopping-bag"></span><span>Collect Payment</span></a>
                 </li>
                 <li>
                     <a href="userprofile-update.php"><span class="las la-user-circle"></span><span>Profile</span></a>
@@ -64,7 +61,7 @@ $resultcheck = mysqli_fetch_row($result);
                 <label for="nav-toggle">
                     <span class="las la-bars"></span>
                 </label>
-                Dashboard
+                User Dashboard
             </h2>
 
             <div class="user-wrapper">
@@ -121,7 +118,7 @@ $resultcheck = mysqli_fetch_row($result);
                         <span>Profit</span>
                     </div>
                     <div>
-                        <span class="lab la-google-wallet"></span>
+                        <span class="las la-file-invoice-dollar"></span>
                     </div>
                 </div>
             </div>
@@ -131,10 +128,12 @@ $resultcheck = mysqli_fetch_row($result);
                     <div class="card">
                         <div class="card-header">
                             <h3>Available surveys</h3>
+                            <form action="showsurveysusers.php">
 
-                            <button>
-                                See all <span class="las la-arrow-right"></span>
-                            </button>
+                                <button>
+                                    See all <span class="las la-arrow-right"></span>
+                                </button>
+                            </form>
                         </div>
 
                         <div class="card-body">
@@ -174,13 +173,11 @@ $resultcheck = mysqli_fetch_row($result);
                                                 if ($row['s_occupation'] != "" && $row['s_occupation'] != $resultcheck[5]) {
                                                     continue;
                                                 }
-                                                echo "<tr><form action='formdisplay.php' method='POST'> 
-                                                <input type='hidden' value='" . $row['surveyid'] . "' name='survey'>
-                                                
-                                            <td> <input type='submit' name='submit' value='" . $row['s_name'] . "'></td>
+                                                echo "<tr>
+                                            <td><a href='formdisplay.php?id=" . $row['surveyid'] . "'>" . $row['s_name'] . "</a></td>
                                             <td>" . $row['s_description'] . "</td>
                                             <td>" . $row['s_occupation'] . "</td>
-                                        </form></tr>";
+                                            </tr>";
                                             }
                                         }
                                         ?>

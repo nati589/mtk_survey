@@ -1,20 +1,17 @@
 <?php
-include '../php/db.inc.php';
+include_once '../php/db.inc.php';
 session_start();
 
 if (!isset($_SESSION['role'])) {
-    header("location: ../../Resources/html/orglogin.php");
+    header("location: ../../Resources/html/login.php");
 }
-if ($_SESSION['role'] != "biguser") {
-    header("location: ../../Resources/html/orglogin.php");
+if ($_SESSION['role'] != "user") {
+    header("location: ../../Resources/html/login.php");
 }
 $email = $_SESSION['email'];
-$sql = "SELECT * FROM orgs WHERE o_email='$email';";
+$sql = "SELECT * FROM user WHERE u_email='$email';";
 $result = mysqli_query($conn, $sql);
 $resultcheck = mysqli_fetch_row($result);
-unset($_SESSION['survey']);
-unset($_SESSION['u_id']);
-
 ?>
 
 <!DOCTYPE html>
@@ -25,7 +22,7 @@ unset($_SESSION['u_id']);
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1">
     <title>Document</title>
-    <link rel="stylesheet" href="../css/showsurvey.css">
+    <link rel="stylesheet" href="../css/showsurveyuser.css">
     <link rel="stylesheet" href="https://maxst.icons8.com/vue-static/landings/line-awesome/line-awesome/1.3.0/css/line-awesome.min.css">
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 
@@ -43,16 +40,16 @@ unset($_SESSION['u_id']);
         <div class="sidebar-menu">
             <ul>
                 <li>
-                    <a href="orgdash.php"><span class="las la-igloo"></span><span>Dashboard</span></a>
+                    <a href="userdash.php"><span class="las la-igloo"></span><span>Dashboard</span></a>
                 </li>
                 <li>
-                    <a href="" class="active"><span class="las la-clipboard-list"></span><span>Surveys</span></a>
+                    <a href="showsurveysusers.php" class="active"><span class="las la-clipboard-list"></span><span>Surveys</span></a>
                 </li>
                 <li>
-                    <a href="form.php"><span class="las la-shopping-bag"></span><span>Create +</span></a>
+                    <a href="payment.php"><span class="las la-shopping-bag"></span><span>Collect Payment</span></a>
                 </li>
                 <li>
-                    <a href="orgprofile-update.php"><span class="las la-user-circle"></span><span>Profile</span></a>
+                    <a href="userprofile-update.php"><span class="las la-user-circle"></span><span>Profile</span></a>
                 </li>
                 <li>
                     <a href="../../Resources/php/logout.php"><span class="las la-clipboard-list"></span><span>Log Out</span></a>
@@ -71,28 +68,28 @@ unset($_SESSION['u_id']);
 
             <div class="search-wrapper">
                 <span class="las la-search"></span>
-                <form action="surveysearch.php" method="POST">
-                    <input name="search" type="search" placeholder="Search here" />
+                <form action="usersearch.php" method="POST">
+                    <input type="search" name="search" placeholder="Search here" />
                 </form>
             </div>
 
             <div class="user-wrapper">
                 <?php
-                if ($resultcheck[7] == '') {
+                if ($resultcheck[10] == '') {
                     echo '<img src="../images/userimg.png" width="40px" height="40px" alt="">';
                 } else {
-                    echo '<img src="uploaded-img/' . $resultcheck[7] . '" width="40px" height="40px" alt="">';
+                    echo '<img src="uploaded-img/' . $resultcheck[10] . '" width="40px" height="40px" alt="">';
                 }
                 ?>
                 <div>
                     <h4>
                         <?php
-                        echo "$resultcheck[0] ";
+                        echo "$resultcheck[0] $resultcheck[1]";
                         ?>
                     </h4>
                     <small>
                         <?php
-                        echo "$resultcheck[2] ";
+                        echo "$resultcheck[6] ";
                         ?>
                     </small>
                 </div>
@@ -121,20 +118,6 @@ unset($_SESSION['u_id']);
                                                                 }
                                                             }
                                                             ?>>Oldest First</option>
-                                    <option value="highsub" <?php
-                                                            if (isset($_POST['surveyfilter'])) {
-                                                                if ($_POST['surveyfilter'] == "highsub") {
-                                                                    echo "selected";
-                                                                }
-                                                            }
-                                                            ?>>Most Submissions</option>
-                                    <option value="lowsub" <?php
-                                                            if (isset($_POST['surveyfilter'])) {
-                                                                if ($_POST['surveyfilter'] == "lowsub") {
-                                                                    echo "selected";
-                                                                }
-                                                            }
-                                                            ?>>Least Submissions</option>
                                 </select>
                             </form>
 
@@ -154,27 +137,61 @@ unset($_SESSION['u_id']);
                                         <?php
                                         if (isset($_POST['surveyfilter'])) {
                                             if ($_POST['surveyfilter'] == "Recent") {
-                                                $querysurvey = "SELECT * FROM survey WHERE s_id IN (SELECT s_id FROM survey_owner WHERE o_id='$resultcheck[1]') ORDER BY s_id DESC;";
+                                                $querysurvey = "SELECT s_name, s_description, s.s_id surveyid, filled_surveys, s_age, s_occupation, s_gender 
+                                                FROM survey s 
+                                                INNER JOIN survey_owner so 
+                                                ON so.s_id=s.s_id
+                                                WHERE s.s_id NOT IN (
+                                                SELECT ts.s_id 
+                                                FROM taken_surveys ts    
+                                                INNER JOIN user u 
+                                                ON ts.u_id = u.u_id
+                                                WHERE ts.u_id = '" . $resultcheck[2] . "') AND so.state='1'
+                                                ORDER BY s.s_id DESC;";
                                             } elseif ($_POST['surveyfilter'] == "Oldest") {
-                                                $querysurvey = "SELECT * FROM survey WHERE s_id IN (SELECT s_id FROM survey_owner WHERE o_id='$resultcheck[1]') ORDER BY s_id;";
-                                            } elseif ($_POST['surveyfilter'] == "highsub") {
-                                                $querysurvey = "SELECT * FROM survey WHERE s_id IN (SELECT s_id FROM survey_owner WHERE o_id='$resultcheck[1]') ORDER BY filled_surveys DESC;";
-                                            } else {
-                                                $querysurvey = "SELECT * FROM survey WHERE s_id IN (SELECT s_id FROM survey_owner WHERE o_id='$resultcheck[1]') ORDER BY filled_surveys;";
+                                                $querysurvey = "SELECT s_name, s_description, s.s_id surveyid, filled_surveys, s_age, s_occupation, s_gender 
+                                                FROM survey s 
+                                                INNER JOIN survey_owner so 
+                                                ON so.s_id=s.s_id
+                                                WHERE s.s_id NOT IN (
+                                                SELECT ts.s_id 
+                                                FROM taken_surveys ts    
+                                                INNER JOIN user u 
+                                                ON ts.u_id = u.u_id
+                                                WHERE ts.u_id = '" . $resultcheck[2] . "') AND so.state='1'
+                                                ORDER BY s.s_id;";
                                             }
                                         } else {
-                                            $querysurvey = "SELECT * FROM survey WHERE s_id IN (SELECT s_id FROM survey_owner WHERE o_id='$resultcheck[1]') ORDER BY s_id DESC;";
+                                            $querysurvey = "SELECT s_name, s_description, s.s_id surveyid, filled_surveys, s_age, s_occupation, s_gender 
+                                            FROM survey s 
+                                            INNER JOIN survey_owner so 
+                                            ON so.s_id=s.s_id
+                                            WHERE s.s_id NOT IN (
+                                            SELECT ts.s_id 
+                                            FROM taken_surveys ts    
+                                            INNER JOIN user u 
+                                            ON ts.u_id = u.u_id
+                                            WHERE ts.u_id = '" . $resultcheck[2] . "') AND so.state='1'
+                                            ORDER BY s.s_id DESC;";
                                         }
                                         $queryresult = mysqli_query($conn, $querysurvey);
                                         $queryresultcheck = mysqli_num_rows($queryresult);
                                         if ($queryresultcheck > 0) {
                                             while ($row = mysqli_fetch_assoc($queryresult)) {
+                                                if ($row['s_age'] != "" && $row['s_age'] >= $resultcheck[3]) {
+                                                    continue;
+                                                }
+                                                if ($row['s_gender'] != "" && $row['s_gender'] != $resultcheck[4]) {
+                                                    continue;
+                                                }
+                                                if ($row['s_occupation'] != "" && $row['s_occupation'] != $resultcheck[5]) {
+                                                    continue;
+                                                }
                                                 echo "<tr>
-                                            <td><a href='showusers.php?id=" . $row['s_id'] . "'>" . $row['s_name'] . "</a></td>
+                                            <td><a href='formdisplay.php?id=" . $row['surveyid'] . "'>" . $row['s_name'] . "</a></td>
                                             <td>" . $row['s_description'] . "</td>
-                                            <td>" . $row['filled_surveys'] . "</td>
-                                        </tr>
-                                        <tr>";
+                                            <td>" . $row['s_occupation'] . "</td>
+                                        </tr>";
                                             }
                                         }
 

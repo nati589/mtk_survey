@@ -331,12 +331,12 @@ td input {
     background-color: transparent;
     border: none;
 }
-table tbody tr td input {
+table tbody tr td a {
     color: #002728 !important;
     font-size: 15px !important;
     transition: all 0.8s;
 }
-table tbody tr td input:hover {
+table tbody tr td a:hover {
     color: #237a7d !important;
     /* font-size: 16px !important; */
     transform: scale(1.1);

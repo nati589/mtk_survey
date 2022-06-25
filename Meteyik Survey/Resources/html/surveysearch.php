@@ -8,12 +8,13 @@ if (!isset($_SESSION['role'])) {
 if ($_SESSION['role'] != "biguser") {
     header("location: ../../Resources/html/orglogin.php");
 }
+if (isset($_POST['search'])) {
+    $search = $_POST['search'];
+}
 $email = $_SESSION['email'];
 $sql = "SELECT * FROM orgs WHERE o_email='$email';";
 $result = mysqli_query($conn, $sql);
 $resultcheck = mysqli_fetch_row($result);
-unset($_SESSION['survey']);
-unset($_SESSION['u_id']);
 
 ?>
 
@@ -46,7 +47,7 @@ unset($_SESSION['u_id']);
                     <a href="orgdash.php"><span class="las la-igloo"></span><span>Dashboard</span></a>
                 </li>
                 <li>
-                    <a href="" class="active"><span class="las la-clipboard-list"></span><span>Surveys</span></a>
+                    <a href="showsurveys.php" class="active"><span class="las la-clipboard-list"></span><span>Surveys</span></a>
                 </li>
                 <li>
                     <a href="form.php"><span class="las la-shopping-bag"></span><span>Create +</span></a>
@@ -71,7 +72,7 @@ unset($_SESSION['u_id']);
 
             <div class="search-wrapper">
                 <span class="las la-search"></span>
-                <form action="surveysearch.php" method="POST">
+                <form action="" method="POST">
                     <input name="search" type="search" placeholder="Search here" />
                 </form>
             </div>
@@ -107,35 +108,22 @@ unset($_SESSION['u_id']);
                             <h3>All Surveys</h3>
                             <form action="" method="POST" id="filtersurvey">
                                 <select name="surveyfilter" id="surveyfilter" onchange="submitFilter();">
-                                    <option value="Recent" <?php
-                                                            if (isset($_POST['surveyfilter'])) {
-                                                                if ($_POST['surveyfilter'] == "Recent") {
-                                                                    echo "selected";
+                                    <option value="Ascending" <?php
+                                                                if (isset($_POST['surveyfilter'])) {
+                                                                    if ($_POST['surveyfilter'] == "Ascending") {
+                                                                        echo "selected";
+                                                                    }
                                                                 }
-                                                            }
-                                                            ?>>Most Recent</option>
-                                    <option value="Oldest" <?php
-                                                            if (isset($_POST['surveyfilter'])) {
-                                                                if ($_POST['surveyfilter'] == "Oldest") {
-                                                                    echo "selected";
+                                                                ?>>Ascending</option>
+                                    <option value="Descending" <?php
+                                                                if (isset($_POST['surveyfilter'])) {
+                                                                    if ($_POST['surveyfilter'] == "Descending") {
+                                                                        echo "selected";
+                                                                    }
                                                                 }
-                                                            }
-                                                            ?>>Oldest First</option>
-                                    <option value="highsub" <?php
-                                                            if (isset($_POST['surveyfilter'])) {
-                                                                if ($_POST['surveyfilter'] == "highsub") {
-                                                                    echo "selected";
-                                                                }
-                                                            }
-                                                            ?>>Most Submissions</option>
-                                    <option value="lowsub" <?php
-                                                            if (isset($_POST['surveyfilter'])) {
-                                                                if ($_POST['surveyfilter'] == "lowsub") {
-                                                                    echo "selected";
-                                                                }
-                                                            }
-                                                            ?>>Least Submissions</option>
+                                                                ?>>Descending</option>
                                 </select>
+                                <input type="hidden" name="search" value="<?php echo $_POST['search']; ?>">
                             </form>
 
                         </div>
@@ -152,18 +140,19 @@ unset($_SESSION['u_id']);
                                     </thead>
                                     <tbody>
                                         <?php
-                                        if (isset($_POST['surveyfilter'])) {
-                                            if ($_POST['surveyfilter'] == "Recent") {
-                                                $querysurvey = "SELECT * FROM survey WHERE s_id IN (SELECT s_id FROM survey_owner WHERE o_id='$resultcheck[1]') ORDER BY s_id DESC;";
-                                            } elseif ($_POST['surveyfilter'] == "Oldest") {
-                                                $querysurvey = "SELECT * FROM survey WHERE s_id IN (SELECT s_id FROM survey_owner WHERE o_id='$resultcheck[1]') ORDER BY s_id;";
-                                            } elseif ($_POST['surveyfilter'] == "highsub") {
-                                                $querysurvey = "SELECT * FROM survey WHERE s_id IN (SELECT s_id FROM survey_owner WHERE o_id='$resultcheck[1]') ORDER BY filled_surveys DESC;";
+                                        if (isset($_POST['search'])) {
+
+                                            if (isset($_POST['surveyfilter'])) {
+                                                if ($_POST['surveyfilter'] == "Ascending") {
+                                                    $querysurvey = "SELECT * FROM survey WHERE s_id IN (SELECT s_id FROM survey_owner WHERE o_id='$resultcheck[1]') AND s_name LIKE '%" . $search . "%' ORDER BY s_id;";
+                                                } elseif ($_POST['surveyfilter'] == "Descending") {
+                                                    $querysurvey = "SELECT * FROM survey WHERE s_id IN (SELECT s_id FROM survey_owner WHERE o_id='$resultcheck[1]') AND s_name LIKE '%" . $search . "%' ORDER BY s_id DESC;";
+                                                }
                                             } else {
-                                                $querysurvey = "SELECT * FROM survey WHERE s_id IN (SELECT s_id FROM survey_owner WHERE o_id='$resultcheck[1]') ORDER BY filled_surveys;";
+                                                $querysurvey = "SELECT * FROM survey WHERE s_id IN (SELECT s_id FROM survey_owner WHERE o_id='$resultcheck[1]') AND s_name LIKE '%" . $_POST['search'] . "%' ORDER BY s_id;";
                                             }
                                         } else {
-                                            $querysurvey = "SELECT * FROM survey WHERE s_id IN (SELECT s_id FROM survey_owner WHERE o_id='$resultcheck[1]') ORDER BY s_id DESC;";
+                                            $querysurvey = "SELECT * FROM survey WHERE s_id IN (SELECT s_id FROM survey_owner WHERE o_id='$resultcheck[1]') ORDER BY s_id;";
                                         }
                                         $queryresult = mysqli_query($conn, $querysurvey);
                                         $queryresultcheck = mysqli_num_rows($queryresult);

@@ -74,6 +74,11 @@ body section {
   /* overflow: hidden; */
   /* height: 200%; */
 }
+.error {
+  color: red;
+  font-size: large;
+  margin-bottom: 2%;
+}
 #right-card a {
   color: var(--orange-color);
   text-decoration: none;

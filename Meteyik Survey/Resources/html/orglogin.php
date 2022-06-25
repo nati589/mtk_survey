@@ -1,8 +1,8 @@
 <?php
 session_start();
-if (isset($_SESSION['role'])) {
-    echo $_SESSION['role'];
-    header("location: ../../Resources/html/admindash.php");
+if (isset($_SESSION['role']) && $_SESSION['role'] == 'biguser') {
+    // echo $_SESSION['role'];
+    header("location: ../../Resources/html/orgdash.php");
 }
 ?>
 
